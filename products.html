@@ -5,78 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produkty</title>
     <link rel="stylesheet" href="style/products.css" />
-    <!-- Załaduj styl specyficzny dla strony produktów -->
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produkty</title>
-    <link rel="stylesheet" href="products.css" />
-    <!-- Załaduj styl specyficzny dla strony produktów -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
-    <!-- Czcionka Montserrat -->
   </head>
   <body>
     <header>
       <div class="logo">PROJECT SIGMA</div>
       <div class="nav">
-        <a href="index.html" class="home-icon"
-          ><img src="images/home.png" alt="homebutton"
-        /></a>
+        <a href="index.html" class="home-icon">
+          <img src="images/home.png" alt="homebutton" />
+        </a>
         <a href="products.html" class="products-link" id="products-button"
           >Produkty</a
         >
-
-        <a href="cart.html" class="user-icon"
-          ><img src="images/cart.png" alt=""
-        /></a>
+        <a href="cart.html" class="user-icon">
+          <img src="images/cart.png" alt="" />
+        </a>
       </div>
     </header>
 
     <!-- Główna zawartość strony z produktami -->
-    <div class="products-container">
-      <div class="product-card">
-        <a href="produkty/product.html?id=1">
-          <div
-            class="product-image"
-            style="background-image: url('images/karnet1.png')"
-          ></div>
-          <p class="product-name">Produkt 1</p>
-        </a>
-      </div>
-
-      <div class="product-card">
-        <a href="produkty/product.html?id=2">
-          <div
-            class="product-image"
-            style="background-image: url('images/produkt2.png')"
-          ></div>
-          <p class="product-name">Produkt 2</p>
-        </a>
-      </div>
-      <div class="product-card">
-        <div class="product-image"></div>
-        <p class="product-name">Produkt 3</p>
-      </div>
-      <div class="product-card">
-        <div class="product-image"></div>
-        <p class="product-name">Produkt 4</p>
-      </div>
-      <div class="product-card">
-        <div class="product-image"></div>
-        <p class="product-name">Produkt 5</p>
-      </div>
-      <div class="product-card">
-        <div class="product-image"></div>
-        <p class="product-name">Produkt 6</p>
-      </div>
+    <div class="products-container" id="products-container">
+      <!-- Produkty będą dodawane dynamicznie przez JavaScript -->
     </div>
 
     <script src="javascript/script.js"></script>
-    <!-- Załaduj skrypt JS -->
   </body>
   <footer>
     <p>&copy; Project Sigma 2024</p>

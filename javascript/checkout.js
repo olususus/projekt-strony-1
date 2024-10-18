@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const checkoutItem = document.createElement("div");
         checkoutItem.classList.add("checkout-item");
         checkoutItem.innerHTML = `
-          <img src="images/${product.image}" alt="${product.name}" />
+          <img src="${product.image}" alt="${product.name}" />
           <div class="product-details">
             <h3>${product.name}</h3>
             <p>${product.price}</p>
@@ -76,22 +76,32 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       body: JSON.stringify(order),
     })
-      .then((response) => response.text()) // Sprawdzamy odpowiedź w formie tekstowej
+      .then((response) => response.text()) // Odczytaj odpowiedź jako tekst
       .then((data) => {
-        console.log(data); // Zobacz, co zwrócił serwer (np. HTML strony błędu)
+        console.log("Odpowiedź z serwera:", data);
 
-        // Teraz próbujemy przekonwertować to na JSON
-        try {
-          const jsonResponse = JSON.parse(data);
-          if (jsonResponse.success) {
-            window.location.href = "order-confirmation.html";
-          } else {
+        // Rozdziel odpowiedź, jeśli zawiera dwa obiekty JSON
+        const splitData = data.split("}{").join("}|||{"); // Zmieniamy na unikalny separator
+        const parts = splitData.split("|||");
+
+        parts.forEach((part) => {
+          try {
+            const jsonResponse = JSON.parse(part);
+            if (jsonResponse.success) {
+              // Jeśli odpowiedź zawiera ID zamówienia, przekieruj użytkownika
+              if (jsonResponse.order_id) {
+                window.location.href = `order-confirmation.html?order_id=${jsonResponse.order_id}`;
+              } else {
+                console.log(jsonResponse.message); // Inny komunikat sukcesu
+              }
+            } else {
+              alert("Wystąpił błąd podczas składania zamówienia.");
+            }
+          } catch (error) {
+            console.error("Błąd podczas przetwarzania odpowiedzi JSON:", error);
             alert("Wystąpił błąd podczas składania zamówienia.");
           }
-        } catch (error) {
-          console.error("Błąd podczas przetwarzania odpowiedzi JSON:", error);
-          alert("Wystąpił błąd podczas składania zamówienia.");
-        }
+        });
       })
       .catch((error) => {
         console.error("Błąd:", error);

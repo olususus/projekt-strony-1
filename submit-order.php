@@ -50,5 +50,16 @@ if ($conn->query($sql) === TRUE) {
     echo json_encode(["success" => false, "message" => "Błąd zapisu zamówienia"]);
 }
 
+// Po zapisaniu zamówienia do bazy danych
+$order_id = $conn->insert_id; // Pobranie ID ostatnio dodanego zamówienia
+
+$response = [
+    'success' => true,
+    'order_id' => $order_id // Przekazujemy ID zamówienia
+];
+
+// Zwrócenie odpowiedzi w formacie JSON
+echo json_encode($response);
+
 $conn->close();
 ?>

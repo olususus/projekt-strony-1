@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cartItem.classList.add("cart-item");
 
         // Ścieżka do zdjęcia (z folderu "images")
-        const productImagePath = `images/${product.image}`;
+        const productImagePath = `${product.image}`;
 
         cartItem.innerHTML = `
           <img src="${productImagePath}" alt="${product.name}" />

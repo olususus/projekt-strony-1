@@ -1,4 +1,3 @@
-/* Podstawowe ustawienia, które dziedziczą się z ogólnego stylu */
 * {
   margin: 0;
   padding: 0;
@@ -209,7 +208,7 @@ footer p:hover {
   color: #8a5fe2; /* Zmiana koloru na hover */
 }
 
-/* Sekcja z ikonami społecznościowymi */
+/* Spolecznosciowe */
 footer .social-links {
   margin-top: 10px;
 }

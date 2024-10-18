@@ -23,24 +23,53 @@ document
 function searchProduct() {
   const searchInput = document
     .getElementById("search-input")
-    .value.toLowerCase(); // Pobiera tekst z pola wyszukiwania
-  const products = [
-    { name: "Produkt 1", url: "produkty/product.html?id=1" },
-    { name: "Produkt 2", url: "produkty/produkt2.html" },
-    { name: "Produkt 3", url: "produkty/produkt3.html" },
-    // Dodaj inne produkty tutaj
-  ];
-
-  // Szukamy najbliższego dopasowania
-  const match = products.find((product) =>
-    product.name.toLowerCase().includes(searchInput)
-  );
-
-  if (match) {
-    // Jeśli znaleziono pasujący produkt, przekierowujemy do strony produktu
-    window.location.href = match.url;
-  } else {
-    // Jeśli nie znaleziono, wyświetlamy komunikat o braku wyników
-    alert("Produkt nie został znaleziony!");
-  }
+    .value.toLowerCase();
+  window.location.href = `search-results.html?query=${encodeURIComponent(
+    searchInput
+  )}`;
 }
+
+// Funkcja do wczytania danych produktów z JSON i generowania kart produktów
+fetch("data/products.json")
+  .then((response) => response.json())
+  .then((products) => {
+    const productsContainer = document.getElementById("products-container");
+
+    // Przetwarzanie każdego produktu z pliku JSON
+    products.forEach((product) => {
+      const productCard = document.createElement("div");
+      productCard.classList.add("product-card");
+
+      const productLink = document.createElement("a");
+      productLink.href = product.url;
+
+      // Tworzenie div z obrazkiem produktu
+      const productImageDiv = document.createElement("div");
+      productImageDiv.classList.add("product-image");
+      productImageDiv.style.backgroundImage = `url('${product.image}')`;
+
+      // Tworzenie nazwy produktu
+      const productName = document.createElement("p");
+      productName.classList.add("product-name");
+      productName.textContent = product.name;
+
+      // Tworzenie ceny produktu
+      const productPrice = document.createElement("p");
+      productPrice.classList.add("product-price");
+      productPrice.textContent = product.price;
+
+      // Dodanie obrazka, nazwy i ceny do linku
+      productLink.appendChild(productImageDiv);
+      productLink.appendChild(productName);
+      productLink.appendChild(productPrice);
+
+      // Dodanie linku do karty produktu
+      productCard.appendChild(productLink);
+
+      // Dodanie karty produktu do kontenera
+      productsContainer.appendChild(productCard);
+    });
+  })
+  .catch((error) => {
+    console.error("Błąd wczytywania produktów:", error);
+  });

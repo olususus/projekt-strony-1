@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Karnet - Project Sigma Basic",
+    "price": "100 PLN",
+    "image": "./images/products/produkt1.png",
+    "url": "product.html?id=1"
+  },
+  {
+    "id": 2,
+    "name": "Karnet - Project Sigma Premium",
+    "price": "200 PLN",
+    "image": "./images/products/produkt2.png",
+    "url": "product.html?id=2"
+  },
+  {
+    "id": 3,
+    "name": "Produkt 3",
+    "price": "300 PLN",
+    "image": "./images/products/produkt3.png",
+    "url": "product.html?id=3"
+  }
+]

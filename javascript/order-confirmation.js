@@ -1,47 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Pobranie danych zamówienia z localStorage
-  const order = JSON.parse(localStorage.getItem("order"));
-
-  if (!order) {
-    document.getElementById("confirmation-container").innerHTML =
-      "<p>Brak danych o zamówieniu.</p>";
-    return;
+  // Funkcja do pobierania danych zamówienia z localStorage
+  function getOrderData() {
+    const orderData = JSON.parse(localStorage.getItem("order"));
+    // Sprawdzenie, czy dane zamówienia istnieją
+    if (!orderData) {
+      alert("Brak danych zamówienia!");
+      window.location.href = "index.html"; // Przekierowanie na stronę główną, jeśli brak danych
+    }
+    return orderData;
   }
 
-  // Wyświetlanie szczegółów zamówienia
-  const orderDetails = document.getElementById("order-details");
-  orderDetails.innerHTML = `
-    <h3>Informacje o zamówieniu</h3>
-    <p><strong>Imię i Nazwisko:</strong> ${order.name}</p>
-    <p><strong>Email:</strong> ${order.email}</p>
-    <p><strong>Adres dostawy:</strong> ${order.address}</p>
-    <p><strong>Telefon:</strong> ${order.phone}</p>
-    <p><strong>Metoda dostawy:</strong> ${order.deliveryMethod}</p>
-  `;
+  // Funkcja do wyświetlania szczegółów zamówienia
+  function displayOrderDetails() {
+    const orderData = getOrderData();
 
-  // Wyświetlanie produktów
-  const orderItems = document.getElementById("order-items");
-  order.items.forEach((item) => {
-    const orderItem = document.createElement("div");
-    orderItem.classList.add("order-item");
-    orderItem.innerHTML = `
-      <p><strong>Produkt:</strong> ${item.name}</p>
-      <p><strong>Cena:</strong> ${item.price}</p>
-    `;
-    orderItems.appendChild(orderItem);
-  });
+    // Wyświetlanie produktów z zamówienia
+    const checkoutItemsContainer = document.getElementById("order-items");
+    const totalPriceElement = document.getElementById("total-price");
+    const deliveryMethodElement = document.getElementById("delivery-method");
+    const addressElement = document.getElementById("address");
+    const nameElement = document.getElementById("name");
+    const emailElement = document.getElementById("email");
 
-  // Wyświetlanie łącznej ceny
-  const totalPriceElement = document.getElementById("order-total-price");
-  totalPriceElement.innerText = `${order.totalPrice.toFixed(2)} PLN`;
-});
+    checkoutItemsContainer.innerHTML = "";
+    let totalPrice = 0;
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Funkcja do czyszczenia koszyka
-  function clearCart() {
-    localStorage.removeItem("cart"); // Usuwamy koszyk z localStorage
+    // Wyświetlanie produktów z zamówienia
+    orderData.items.forEach((product) => {
+      const orderItem = document.createElement("div");
+      orderItem.classList.add("order-item");
+      orderItem.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <div class="product-details">
+          <h3>${product.name}</h3>
+          <p>${product.price}</p>
+        </div>
+      `;
+      checkoutItemsContainer.appendChild(orderItem);
+
+      // Sumowanie ceny produktów
+      totalPrice += parseFloat(
+        product.price.replace(" PLN", "").replace(",", ".")
+      );
+    });
+
+    // Wyświetlanie szczegółów zamówienia
+    totalPriceElement.innerText = `${totalPrice.toFixed(2)} PLN`;
+    deliveryMethodElement.innerText =
+      orderData.deliveryMethod || "Brak metody dostawy";
+    addressElement.innerText = orderData.address || "Brak adresu";
+    nameElement.innerText = orderData.name || "Brak nazwy";
+    emailElement.innerText = orderData.email || "Brak adresu email";
   }
 
-  // Czysty koszyk po wczytaniu strony
-  clearCart();
+  // Wyświetlanie szczegółów zamówienia po załadowaniu strony
+  displayOrderDetails();
 });
