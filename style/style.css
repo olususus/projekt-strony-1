@@ -4,13 +4,27 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   font-family: Montserrat;
   background-color: #1a1a1a;
   color: white;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  margin: 0;
+  height: 100%;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 50px;
 }
 
 header {
@@ -39,8 +53,15 @@ header {
   height: 35px;
 }
 
-.nav > .search-bar {
-  background: #232323;
+.products-link {
+  padding: 5px 10px;
+  background-color: #6f42c1;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.products-link:hover {
+  background-color: #5a33a6;
 }
 
 .home-icon,
@@ -57,22 +78,120 @@ header {
   border: none;
 }
 
-main {
+.welcome-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  height: 100%;
+  text-align: center;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 200px);
-  grid-gap: 20px;
+.welcome-section h1 {
+  font-size: 4em;
+  font-weight: bold;
+  background: linear-gradient(to right, #4a6cf7, #f56f91);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
 }
 
-.grid-item {
-  width: 200px;
-  height: 300px;
-  background-color: white;
-  border-radius: 10px;
+/* Pole wyszukiwania */
+#search-input {
+  padding: 10px;
+  margin: 20px 0;
+  width: 300px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #8a5fe2; /* Początkowy kolor obramowania */
+  background-color: #333;
+  color: white;
+  transition: all 0.3s ease; /* Płynne przejście */
+}
+
+/* Efekt po kliknięciu (focus) */
+#search-input:focus {
+  outline: none; /* Usuwamy domyślny outline */
+  border: 2px solid red; /* Czerwony kolor obramowania */
+  width: 350px; /* Powiększenie pola */
+  padding: 10px 15px; /* Zwiększenie przestrzeni wewnętrznej */
+}
+
+/* Stylizacja przycisku */
+#searchButton {
+  padding: 10px 20px;
+  background-color: #8a5fe2;
+  color: white;
+  border: 2px solid #6b6bd4; /* Dodanie obramowania w kolorze #6b6bd4 */
+  border-radius: 8px; /* Zaokrąglone rogi */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    border-color 0.3s ease; /* Płynne przejście */
+}
+
+/* Efekt na hover dla przycisku */
+#searchButton:hover {
+  background-color: #5a33a6; /* Zmiana tła przy hoverze */
+  transform: scale(1.1); /* Powiększenie przycisku przy hoverze */
+  border-color: #8a5fe2; /* Zmiana koloru obramowania przy hoverze */
+}
+
+/* Efekt na focus dla przycisku */
+#searchButton:focus {
+  outline: none; /* Usunięcie obramowania przy kliknięciu */
+  box-shadow: 0 0 5px #5a33a6; /* Cień przy kliknięciu */
+  border-color: #5a33a6; /* Zmiana koloru obramowania przy focus */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #8a5fe2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5a33a6;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #8a5fe2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5a33a6;
+}
+
+/* Stopka */
+footer {
+  background-color: #333; /* Tło stopki */
+  color: white; /* Kolor tekstu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  padding: 20px 0; /* Odstępy wewnętrzne */
+  font-size: 14px; /* Rozmiar czcionki */
+  width: 100%; /* Zapewnia pełną szerokość stopki */
+  position: relative; /* Umożliwia kontrolowanie pozycji stopki */
+  bottom: 0;
+}
+
+/* Efekt hover dla tekstu w stopce */
+footer p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif; /* Czcionka */
+  letter-spacing: 1px; /* Rozstawienie liter */
+  font-weight: 300;
+  transition: color 0.3s ease; /* Płynna zmiana koloru */
+}
+
+footer p:hover {
+  color: #8a5fe2; /* Zmiana koloru na hover */
 }

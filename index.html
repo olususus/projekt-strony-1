@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style/reset.css" />
+    <script src="javascript/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,21 +21,25 @@
         <a href="#" class="home-icon"
           ><img src="images/home.png" alt="homebutton"
         /></a>
-        <input type="text" placeholder="szukaj" class="search-bar" />
-        <a href="#" class="user-icon"><img src="images/user.png" alt="" /></a>
+        <a href="products.html" class="products-link" id="products-button"
+          >Produkty</a
+        >
+
+        <a href="cart.html" class="user-icon"
+          ><img src="images/user.png" alt=""
+        /></a>
       </div>
     </header>
     <main>
-      <div class="grid-container">
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
+      <div class="welcome-section">
+        <h1>Witaj!</h1>
+        <!-- Pole wyszukiwania -->
+        <input type="text" id="search-input" placeholder="Szukaj produktu..." />
+        <button onclick="searchProduct()" id="searchButton">Szukaj</button>
       </div>
     </main>
   </body>
+  <footer>
+    <p>&copy; Project Sigma 2024</p>
+  </footer>
 </html>
