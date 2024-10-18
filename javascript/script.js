@@ -25,7 +25,7 @@ function searchProduct() {
     .getElementById("search-input")
     .value.toLowerCase(); // Pobiera tekst z pola wyszukiwania
   const products = [
-    { name: "Produkt 1", url: "produkty/produkt1.html" },
+    { name: "Produkt 1", url: "produkty/product.html?id=1" },
     { name: "Produkt 2", url: "produkty/produkt2.html" },
     { name: "Produkt 3", url: "produkty/produkt3.html" },
     // Dodaj inne produkty tutaj

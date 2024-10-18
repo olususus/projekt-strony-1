@@ -29,7 +29,7 @@ header {
   height: 40px;
 }
 
-.nav > .cart-link > img {
+.nav > .user-icon > img {
   height: 35px;
 }
 
@@ -45,7 +45,7 @@ header {
 }
 
 .home-icon,
-.user-cart-link {
+.user-icon {
   font-size: 1.5em;
   margin: 0 10px;
   text-decoration: none;
@@ -112,7 +112,7 @@ header {
   color: #8a5fe2; /* Kolor ceny */
 }
 
-.add-tocart {
+#add-tocart {
   padding: 10px 20px;
   background-color: #8a5fe2; /* Kolor przycisku */
   color: white;
@@ -122,6 +122,6 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.add-tocart:hover {
+#add-tocart:hover {
   background-color: #5a33a6; /* Efekt na hover */
 }

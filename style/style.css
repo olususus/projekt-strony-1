@@ -6,7 +6,7 @@
 
 html,
 body {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   background-color: #1a1a1a;
   color: white;
   display: flex;
@@ -194,4 +194,25 @@ footer p {
 
 footer p:hover {
   color: #8a5fe2; /* Zmiana koloru na hover */
+}
+
+/* Sekcja z ikonami społecznościowymi */
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 15px;
+}
+
+footer .social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-links img:hover {
+  transform: scale(1.2); /* Powiększenie ikony po najechaniu */
 }
