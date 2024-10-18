@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style/checkout.css" />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">PROJECT SIGMA</div>
+      <div class="nav">
+        <a href="index.html" class="home-icon"
+          ><img src="images/home.png" alt="homebutton"
+        /></a>
+        <a href="products.html" class="products-link" id="products-button"
+          >Produkty</a
+        >
+        <a href="cart.html" class="user-icon"
+          ><img src="images/user.png" alt=""
+        /></a>
+      </div>
+    </header>
+
+    <main>
+      <div id="checkout-container">
+        <!-- Produkty w koszyku -->
+        <h2>Twoje zamówienie</h2>
+        <div id="checkout-items"></div>
+        <!-- Sekcja wyświetlająca łączną cenę -->
+        <section id="total-price-section">
+          <h3>Łączna cena: <span id="total-price">0 PLN</span></h3>
+        </section>
+
+        <!-- Sposób dostawy i dane osobowe -->
+        <section id="delivery-details">
+          <h3>Wybierz sposób dostawy</h3>
+          <div class="delivery-method">
+            <input
+              type="radio"
+              id="inpost"
+              name="delivery"
+              value="InPost"
+              checked
+            />
+            <label for="inpost">InPost</label>
+
+            <input type="radio" id="dhl" name="delivery" value="DHL" />
+            <label for="dhl">DHL</label>
+
+            <input type="radio" id="dpd" name="delivery" value="DPD" />
+            <label for="dpd">DPD</label>
+          </div>
+
+          <!-- Adres dostawy -->
+          <div class="address-section">
+            <h4>Adres dostawy</h4>
+            <input
+              type="text"
+              id="address"
+              placeholder="Wpisz adres dostawy..."
+              required
+            />
+          </div>
+
+          <!-- Dane osobowe -->
+          <div class="personal-details">
+            <h4>Dane osobowe</h4>
+            <input
+              type="text"
+              id="name"
+              placeholder="Imię i nazwisko"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Adres e-mail"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Numer telefonu"
+              required
+            />
+          </div>
+
+          <button id="place-order" class="btn-order">Złóż zamówienie</button>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; Project Sigma 2024</p>
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/olussniepriv"
+          target="_blank"
+          class="instagram-link"
+        >
+          <img src="images/instagram.png" alt="Instagram" />
+        </a>
+        <a
+          href="https://github.com/olususus"
+          target="_blank"
+          class="github-link"
+        >
+          <img src="images/github.png" alt="GitHub" />
+        </a>
+      </div>
+    </footer>
+
+    <script src="javascript/checkout.js"></script>
+  </body>
+</html>

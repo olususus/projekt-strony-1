@@ -229,3 +229,39 @@ footer .social-links img {
 footer .social-links img:hover {
   transform: scale(1.2); /* Powiększenie ikony po najechaniu */
 }
+
+/* Kontener przycisku "Dalej" */
+#cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Wyśrodkowanie poziome */
+  justify-content: center; /* Wyśrodkowanie pionowe */
+  text-align: center;
+}
+
+/* Stylowanie przycisku "Dalej" z ikonką */
+.next-btn {
+  background-color: #8a5fe2; /* Kolor tła przycisku */
+  color: white; /* Kolor tekstu */
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Odstęp od góry */
+}
+
+.next-btn img {
+  margin-left: 10px;
+  width: 16px; /* Wymiary ikony */
+  height: 16px;
+}
+
+.next-btn:hover {
+  background-color: #6f47c2; /* Efekt hover */
+}

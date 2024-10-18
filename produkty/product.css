@@ -125,3 +125,49 @@ header {
 #add-tocart:hover {
   background-color: #5a33a6; /* Efekt na hover */
 }
+
+/* Stopka */
+footer {
+  background-color: #333; /* Tło stopki */
+  color: white; /* Kolor tekstu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  padding: 20px 0; /* Odstępy wewnętrzne */
+  font-size: 14px; /* Rozmiar czcionki */
+  width: 100%; /* Zapewnia pełną szerokość stopki */
+  position: relative; /* Umożliwia kontrolowanie pozycji stopki */
+  bottom: 0;
+}
+
+/* Efekt hover dla tekstu w stopce */
+footer p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif; /* Czcionka */
+  letter-spacing: 1px; /* Rozstawienie liter */
+  font-weight: 300;
+  transition: color 0.3s ease; /* Płynna zmiana koloru */
+}
+
+footer p:hover {
+  color: #8a5fe2; /* Zmiana koloru na hover */
+}
+
+/* Sekcja z ikonami społecznościowymi */
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 15px;
+}
+
+footer .social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-links img:hover {
+  transform: scale(1.2); /* Powiększenie ikony po najechaniu */
+}

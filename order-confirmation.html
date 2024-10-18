@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Potwierdzenie Zamówienia</title>
+    <link rel="stylesheet" href="style/order-confirmation.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">PROJECT SIGMA</div>
+      <div class="nav">
+        <a href="index.html" class="home-icon"
+          ><img src="images/home.png" alt="homebutton"
+        /></a>
+        <a href="products.html" class="products-link" id="products-button"
+          >Produkty</a
+        >
+        <a href="cart.html" class="user-icon"
+          ><img src="images/user.png" alt=""
+        /></a>
+      </div>
+    </header>
+
+    <main>
+      <div id="confirmation-container">
+        <h2>Dziękujemy za złożenie zamówienia!</h2>
+        <p>Twoje zamówienie zostało pomyślnie złożone. Oto szczegóły:</p>
+
+        <div id="order-details">
+          <!-- Szczegóły zamówienia -->
+          <h3>Informacje o zamówieniu</h3>
+          <p><strong>Imię i Nazwisko:</strong> <span id="order-name"></span></p>
+          <p><strong>Email:</strong> <span id="order-email"></span></p>
+          <p><strong>Adres:</strong> <span id="order-address"></span></p>
+          <p><strong>Numer telefonu:</strong> <span id="order-phone"></span></p>
+          <p>
+            <strong>Metoda dostawy:</strong>
+            <span id="order-delivery-method"></span>
+          </p>
+
+          <h3>Produkty w zamówieniu</h3>
+          <div id="order-items"></div>
+
+          <h3>Łączna cena</h3>
+          <p id="order-total-price"></p>
+        </div>
+
+        <button onclick="window.location.href='index.html'">
+          Wróć do strony głównej
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; Project Sigma 2024</p>
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/olussniepriv"
+          target="_blank"
+          class="instagram-link"
+        >
+          <img src="images/instagram.png" alt="Instagram" />
+        </a>
+        <a
+          href="https://github.com/olususus"
+          target="_blank"
+          class="github-link"
+        >
+          <img src="images/github.png" alt="GitHub" />
+        </a>
+      </div>
+    </footer>
+
+    <script src="javascript/order-confirmation.js"></script>
+  </body>
+</html>
