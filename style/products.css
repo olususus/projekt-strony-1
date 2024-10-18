@@ -64,9 +64,17 @@ header {
 /* Kafelki z produktami */
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Użyj elastycznych kolumn */
   gap: 20px;
   padding: 20px;
+  justify-content: center; /* Wyśrodkowanie kolumn */
+  align-items: start; /* Ustawienie elementów w górnej części kontenera */
+  width: 100%; /* Zapewnienie pełnej szerokości */
+  margin: 0 auto; /* Wyśrodkowanie kontenera */
+  text-align: center; /* Wyśrodkowanie tekstu w każdym kafelku */
 }
 
 .product-card {
