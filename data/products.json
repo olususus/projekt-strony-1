@@ -15,9 +15,17 @@
   },
   {
     "id": 3,
-    "name": "Produkt 3",
-    "price": "300 PLN",
+    "name": "Red - Energy Drink",
+    "price": "5 PLN",
     "image": "./images/products/produkt3.png",
     "url": "product.html?id=3"
+  },
+
+  {
+    "id": 4,
+    "name": "Koszulka Project Sigma",
+    "price": "69 PLN",
+    "image": "./images/products/produkt4.png",
+    "url": "product.html?id=4"
   }
 ]
