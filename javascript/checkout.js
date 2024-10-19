@@ -1,22 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Funkcja do pobrania koszyka z localStorage
-  function getCart() {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-  }
+  const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
 
   // Funkcja do wyświetlania produktów w koszyku
-  function displayCheckoutItems() {
+  const displayCheckoutItems = () => {
     const cart = getCart();
     const checkoutItemsContainer = document.getElementById("checkout-items");
     const totalPriceElement = document.getElementById("total-price");
+
+    if (!checkoutItemsContainer || !totalPriceElement) return;
 
     if (cart.length === 0) {
       checkoutItemsContainer.innerHTML = "<p>Twój koszyk jest pusty.</p>";
     } else {
       checkoutItemsContainer.innerHTML = "";
-      let totalPrice = 0;
-
-      cart.forEach((product) => {
+      const totalPrice = cart.reduce((sum, product) => {
+        const price = parseFloat(
+          product.price.replace(" PLN", "").replace(",", ".")
+        );
         const checkoutItem = document.createElement("div");
         checkoutItem.classList.add("checkout-item");
         checkoutItem.innerHTML = `
@@ -27,20 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
         checkoutItemsContainer.appendChild(checkoutItem);
+        return sum + price;
+      }, 0);
 
-        // Sumowanie ceny produktów
-        totalPrice += parseFloat(
-          product.price.replace(" PLN", "").replace(",", ".")
-        );
-      });
-
-      // Wyświetlanie łącznej ceny
       totalPriceElement.innerText = `${totalPrice.toFixed(2)} PLN`;
     }
-  }
+  };
 
   // Funkcja do złożenia zamówienia
-  function submitOrder() {
+  const submitOrder = () => {
     const cart = getCart();
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -50,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       'input[name="delivery"]:checked'
     );
 
-    if (!name || !email || !address || !phone || !deliveryMethod) {
+    if (![name, email, address, phone, deliveryMethod].every(Boolean)) {
       alert("Proszę uzupełnić wszystkie dane.");
       return;
     }
@@ -75,25 +71,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Można dodać przekierowanie po zakończeniu procesu zamówienia, np.:
     window.location.href = "order-confirmation.html"; // lub inna strona
-  }
+  };
 
   // Funkcja do obliczenia łącznej ceny
-  function calculateTotalPrice(cart) {
-    let totalPrice = 0;
-    cart.forEach((product) => {
-      totalPrice += parseFloat(
-        product.price.replace(" PLN", "").replace(",", ".")
+  const calculateTotalPrice = (cart) =>
+    cart.reduce((sum, product) => {
+      return (
+        sum + parseFloat(product.price.replace(" PLN", "").replace(",", "."))
       );
-    });
-    return totalPrice;
-  }
+    }, 0);
 
   // Wyświetlanie produktów po załadowaniu strony
   displayCheckoutItems();
 
   // Obsługuje kliknięcie przycisku "Złóż zamówienie"
   const submitOrderButton = document.getElementById("place-order");
-  if (submitOrderButton) {
-    submitOrderButton.addEventListener("click", submitOrder);
-  }
+  submitOrderButton?.addEventListener("click", submitOrder);
 });

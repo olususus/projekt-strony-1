@@ -2,6 +2,9 @@
 window.addEventListener("load", function () {
   // Dodajemy klasę 'loaded' do body, aby uruchomić animację
   document.body.classList.add("loaded");
+
+  // Dodajemy klasę 'loaded' do tytułu specjalnej kategorii
+  document.querySelector(".special-title").classList.add("loaded");
 });
 
 // Funkcja do płynnego przejścia do strony "products.html"
@@ -73,11 +76,3 @@ fetch("data/products.json")
   .catch((error) => {
     console.error("Błąd wczytywania produktów:", error);
   });
-
-window.addEventListener("load", function () {
-  // Dodajemy klasę 'loaded' do body, aby uruchomić animację
-  document.body.classList.add("loaded");
-
-  // Dodajemy klasę 'loaded' do tytułu specjalnej kategorii
-  document.querySelector(".special-title").classList.add("loaded");
-});

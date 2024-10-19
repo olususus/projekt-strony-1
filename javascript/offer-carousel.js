@@ -10,76 +10,32 @@ fetch("data/offers.json")
     // Sortowanie ofert według id (od największego do najmniejszego)
     offers.sort((a, b) => b.id - a.id);
 
+    // Funkcja do tworzenia karty oferty
+    function createOfferCard(offer, isFullRow = false) {
+      const offerCard = document.createElement("div");
+      offerCard.classList.add("offer-card", isFullRow ? "fullrow" : "");
+
+      offerCard.innerHTML = `
+        <img src="${offer.image}" alt="${offer.title}" />
+        <p class="offer-title">${offer.title}</p>
+        <p class="offer-details">${offer.details}</p>
+        <p class="offer-price">Cena: ${offer.price}</p>
+        <a href="${offer.url}" class="offer-link">Sprawdź ofertę</a>
+      `;
+
+      return offerCard;
+    }
+
     // Wyświetlenie oferty z najwyższym id w sekcji "ostatnich ofert" zajmującej cały rząd
-    const latestOffer = offers[0];
-    const latestOfferCard = document.createElement("div");
-    latestOfferCard.classList.add("offer-card", "fullrow");
-
-    const latestOfferImage = document.createElement("img");
-    latestOfferImage.src = latestOffer.image;
-    latestOfferImage.alt = latestOffer.title;
-
-    const latestOfferTitle = document.createElement("p");
-    latestOfferTitle.classList.add("offer-title");
-    latestOfferTitle.textContent = latestOffer.title;
-
-    const latestOfferDetails = document.createElement("p");
-    latestOfferDetails.classList.add("offer-details");
-    latestOfferDetails.textContent = latestOffer.details;
-
-    const latestOfferPrice = document.createElement("p");
-    latestOfferPrice.classList.add("offer-price");
-    latestOfferPrice.textContent = `Cena: ${latestOffer.price}`;
-
-    const latestOfferLink = document.createElement("a");
-    latestOfferLink.href = latestOffer.url;
-    latestOfferLink.classList.add("offer-link");
-    latestOfferLink.textContent = "Sprawdź ofertę";
-
-    latestOfferCard.appendChild(latestOfferImage);
-    latestOfferCard.appendChild(latestOfferTitle);
-    latestOfferCard.appendChild(latestOfferDetails);
-    latestOfferCard.appendChild(latestOfferPrice);
-    latestOfferCard.appendChild(latestOfferLink);
-
-    latestOfferFullRow.appendChild(latestOfferCard);
+    latestOfferFullRow.appendChild(createOfferCard(offers[0], true));
 
     // Tworzenie kontenera dla innych ofert (max 3 w rzędzie)
     otherOffersContainer.classList.add("offers-row");
 
     // Dodanie do kontenera maksymalnie 3 innych ofert
     offers.slice(1, 4).forEach((offer, index) => {
-      const offerCard = document.createElement("div");
-      offerCard.classList.add("offer-card");
+      const offerCard = createOfferCard(offer);
       offerCard.style.animationDelay = `${index * 0.2}s`;
-
-      const offerImage = document.createElement("img");
-      offerImage.src = offer.image;
-      offerImage.alt = offer.title;
-
-      const offerTitle = document.createElement("p");
-      offerTitle.classList.add("offer-title");
-      offerTitle.textContent = offer.title;
-
-      const offerDetails = document.createElement("p");
-      offerDetails.classList.add("offer-details");
-      offerDetails.textContent = offer.details;
-
-      const offerPrice = document.createElement("p");
-      offerPrice.classList.add("offer-price");
-      offerPrice.textContent = `Cena: ${offer.price}`;
-
-      const offerLink = document.createElement("a");
-      offerLink.href = offer.url;
-      offerLink.classList.add("offer-link");
-      offerLink.textContent = "Sprawdź ofertę";
-
-      offerCard.appendChild(offerImage);
-      offerCard.appendChild(offerTitle);
-      offerCard.appendChild(offerDetails);
-      offerCard.appendChild(offerPrice);
-      offerCard.appendChild(offerLink);
-
       otherOffersContainer.appendChild(offerCard);
     });
 

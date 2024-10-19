@@ -1,91 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Funkcja do pobrania koszyka z localStorage
-  function getCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    return cart;
-  }
+  // Pobranie koszyka z localStorage
+  const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Funkcja do zapisania koszyka w localStorage
-  function saveCart(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
+  // Zapisanie koszyka do localStorage
+  const saveCart = (cart) => localStorage.setItem("cart", JSON.stringify(cart));
 
-  // Funkcja do usuwania produktu z koszyka
-  function removeFromCart(index) {
+  // Usuwanie produktu z koszyka
+  const removeFromCart = (index) => {
     const cart = getCart();
     cart.splice(index, 1); // Usuwa produkt na danym indeksie
     saveCart(cart);
-    displayCartItems(); // Odświeżenie zawartości koszyka po usunięciu
-    updateCartCount(); // Aktualizacja liczby produktów w koszyku
-  }
+    displayCartItems();
+    updateCartCount();
+  };
 
-  // Funkcja do wyświetlania produktów w koszyku
-  function displayCartItems() {
+  // Wyświetlanie produktów w koszyku
+  const displayCartItems = () => {
     const cart = getCart();
     const cartItemsContainer = document.getElementById("cart-items");
 
-    if (cartItemsContainer) {
-      if (cart.length === 0) {
-        cartItemsContainer.innerHTML = "<p>Twój koszyk jest pusty.</p>";
-        return;
-      }
+    if (!cartItemsContainer)
+      return console.error('Element z id "cart-items" nie został znaleziony!');
 
-      cartItemsContainer.innerHTML = ""; // Opróżnia kontener przed dodaniem nowych produktów
-      cart.forEach((product, index) => {
-        const cartItem = document.createElement("div");
-        cartItem.classList.add("cart-item");
+    cartItemsContainer.innerHTML =
+      cart.length === 0 ? "<p>Twój koszyk jest pusty.</p>" : "";
 
-        // Ścieżka do zdjęcia (z folderu "images")
-        const productImagePath = `${product.image}`;
+    cart.forEach((product, index) => {
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("cart-item");
 
-        cartItem.innerHTML = `
-          <img src="${productImagePath}" alt="${product.name}" />
-          <div class="product-details">
-            <h3>${product.name}</h3>
-            <p>${product.price}</p>
-          </div>
-          <button class="remove-item" data-index="${index}">Usuń</button>
-        `;
+      cartItem.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <div class="product-details">
+          <h3>${product.name}</h3>
+          <p>${product.price}</p>
+        </div>
+        <button class="remove-item" data-index="${index}">Usuń</button>
+      `;
 
-        // Dodanie funkcji usuwania produktu po kliknięciu przycisku "Usuń"
-        const removeButton = cartItem.querySelector(".remove-item");
-        if (removeButton) {
-          removeButton.addEventListener("click", (event) => {
-            const index = event.target.getAttribute("data-index");
+      cartItem
+        .querySelector(".remove-item")
+        .addEventListener("click", (event) => {
+          const index = event.target.getAttribute("data-index");
+          cartItem.classList.add("removing");
 
-            // Animacja przed usunięciem
-            cartItem.classList.add("removing");
+          setTimeout(() => removeFromCart(index), 500);
+        });
 
-            // Usuwamy produkt po zakończeniu animacji
-            setTimeout(() => {
-              removeFromCart(index); // Usuwa produkt z koszyka
-            }, 500); // Czas trwania animacji (0.5 sekundy)
-          });
-        }
+      cartItemsContainer.appendChild(cartItem);
+    });
+  };
 
-        cartItemsContainer.appendChild(cartItem);
-      });
-    } else {
-      console.error('Element z id "cart-items" nie został znaleziony!');
-    }
-  }
-
-  // Funkcja do aktualizacji liczby produktów w koszyku
-  function updateCartCount() {
+  // Aktualizacja liczby produktów w koszyku
+  const updateCartCount = () => {
     const cart = getCart();
     const cartLink = document.querySelector(".cart-link img");
 
-    if (cartLink) {
-      const cartCount = cart.length;
-      cartLink.setAttribute("alt", `Koszyk (${cartCount})`);
-    } else {
-      console.error("Ikona koszyka nie została znaleziona!");
-    }
-  }
+    if (!cartLink)
+      return console.error("Ikona koszyka nie została znaleziona!");
 
-  // Wyświetlenie zawartości koszyka po załadowaniu strony koszyka
-  if (document.getElementById("cart-items")) {
-    displayCartItems();
-  }
-  updateCartCount(); // Aktualizacja liczby produktów w koszyku na ikonie
+    const cartCount = cart.length;
+    cartLink.setAttribute("alt", `Koszyk (${cartCount})`);
+  };
+
+  // Wyświetlenie zawartości koszyka oraz aktualizacja liczby produktów
+  if (document.getElementById("cart-items")) displayCartItems();
+  updateCartCount();
 });

@@ -1,11 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get("query");
-  document.getElementById("search-query").textContent = query;
+  const query = urlParams.get("query") || ""; // Jeśli brak query, użyj pustego ciągu
+  const searchQueryElement = document.getElementById("search-query");
+
+  // Jeśli element 'search-query' istnieje, ustawiamy tekst zapytania
+  if (searchQueryElement) {
+    searchQueryElement.textContent = query;
+  }
 
   // Pobieramy dane o produktach z pliku JSON
   fetch("data/products.json")
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Błąd podczas pobierania pliku JSON");
+      }
+      return response.json();
+    })
     .then((products) => {
       // Filtrujemy produkty na podstawie zapytania
       const matchingProducts = products
@@ -33,7 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsList.innerHTML = "<p>Nie znaleziono wyników.</p>";
       }
     })
-    .catch((error) =>
-      console.error("Błąd podczas ładowania produktów:", error)
-    );
+    .catch((error) => {
+      console.error("Błąd podczas ładowania produktów:", error);
+      const resultsList = document.getElementById("results-list");
+      if (resultsList) {
+        resultsList.innerHTML =
+          "<p>Wystąpił błąd podczas ładowania danych produktów.</p>";
+      }
+    });
 });

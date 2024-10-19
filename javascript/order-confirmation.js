@@ -2,55 +2,45 @@ document.addEventListener("DOMContentLoaded", () => {
   // Funkcja do pobierania danych zamówienia z localStorage
   function getOrderData() {
     const orderData = JSON.parse(localStorage.getItem("order"));
-    // Sprawdzenie, czy dane zamówienia istnieją
     if (!orderData) {
       alert("Brak danych zamówienia!");
-      window.location.href = "index.html"; // Przekierowanie na stronę główną, jeśli brak danych
+      window.location.href = "index.html"; // Przekierowanie na stronę główną
     }
     return orderData;
   }
 
   // Funkcja do wyświetlania szczegółów zamówienia
   function displayOrderDetails() {
-    const orderData = getOrderData();
+    const { items, totalPrice, deliveryMethod, address, name, email } =
+      getOrderData();
 
-    // Wyświetlanie produktów z zamówienia
     const checkoutItemsContainer = document.getElementById("order-items");
-    const totalPriceElement = document.getElementById("total-price");
-    const deliveryMethodElement = document.getElementById("delivery-method");
-    const addressElement = document.getElementById("address");
-    const nameElement = document.getElementById("name");
-    const emailElement = document.getElementById("email");
-
-    checkoutItemsContainer.innerHTML = "";
-    let totalPrice = 0;
+    checkoutItemsContainer.innerHTML = ""; // Wyczyść przed dodaniem nowych danych
+    let total = 0;
 
     // Wyświetlanie produktów z zamówienia
-    orderData.items.forEach((product) => {
-      const orderItem = document.createElement("div");
-      orderItem.classList.add("order-item");
-      orderItem.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" />
-        <div class="product-details">
-          <h3>${product.name}</h3>
-          <p>${product.price}</p>
+    items.forEach(({ image, name, price }) => {
+      checkoutItemsContainer.innerHTML += `
+        <div class="order-item">
+          <img src="${image}" alt="${name}" />
+          <div class="product-details">
+            <h3>${name}</h3>
+            <p>${price}</p>
+          </div>
         </div>
       `;
-      checkoutItemsContainer.appendChild(orderItem);
-
-      // Sumowanie ceny produktów
-      totalPrice += parseFloat(
-        product.price.replace(" PLN", "").replace(",", ".")
-      );
+      total += parseFloat(price.replace(" PLN", "").replace(",", "."));
     });
 
     // Wyświetlanie szczegółów zamówienia
-    totalPriceElement.innerText = `${totalPrice.toFixed(2)} PLN`;
-    deliveryMethodElement.innerText =
-      orderData.deliveryMethod || "Brak metody dostawy";
-    addressElement.innerText = orderData.address || "Brak adresu";
-    nameElement.innerText = orderData.name || "Brak nazwy";
-    emailElement.innerText = orderData.email || "Brak adresu email";
+    document.getElementById("total-price").innerText = `${total.toFixed(
+      2
+    )} PLN`;
+    document.getElementById("delivery-method").innerText =
+      deliveryMethod || "Brak metody dostawy";
+    document.getElementById("address").innerText = address || "Brak adresu";
+    document.getElementById("name").innerText = name || "Brak nazwy";
+    document.getElementById("email").innerText = email || "Brak adresu email";
   }
 
   // Funkcja do usunięcia danych zamówienia z localStorage
@@ -61,11 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Wyświetlanie szczegółów zamówienia po załadowaniu strony
   displayOrderDetails();
 
-  // Dodanie nasłuchiwania na kliknięcie przycisku powrotu
-  const returnButton = document.querySelector("button");
-  if (returnButton) {
-    returnButton.addEventListener("click", () => {
-      clearOrderData(); // Usuwamy dane zamówienia przed przekierowaniem
-    });
-  }
+  // Nasłuchuj kliknięcia przycisku powrotu
+  document.querySelector("button")?.addEventListener("click", () => {
+    clearOrderData(); // Usuwamy dane zamówienia przed przekierowaniem
+  });
 });
