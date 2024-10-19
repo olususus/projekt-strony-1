@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Product ID from URL:", productId); // Dodany log
 
   // Pobranie danych o produktach z pliku JSON
-  fetch("../data/products.json")
+  fetch("./data/products.json")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Błąd podczas pobierania pliku JSON");
@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ).textContent = `Cena: ${product.price}`;
         document.getElementById("product-img").src = product.image;
         document.getElementById("product-img").alt = product.name;
+        document.getElementById("product-description").textContent =
+          product.description;
       } else {
         // Jeśli produkt nie zostanie znaleziony, wyświetl komunikat
         document.getElementById("product-name").textContent =

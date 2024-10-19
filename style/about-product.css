@@ -1,0 +1,54 @@
+/* to cos chyba psuje mi zdjecia w koszyku*/
+
+header {
+  background-color: #8a5fe2;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav > .home-icon > img {
+  height: 40px;
+}
+
+.nav > .user-icon > img {
+  height: 35px;
+}
+
+.products-link,
+.about-us {
+  padding: 5px 10px;
+  background-color: #6f42c1;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.products-link:hover,
+.about-us:hover {
+  background-color: #5a33a6;
+}
+
+.home-icon,
+.user-icon {
+  font-size: 1.5em;
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.search-bar {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}

@@ -1,0 +1,12 @@
+.o-nas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.o-nas > h3 {
+  font-weight: 200;
+}
