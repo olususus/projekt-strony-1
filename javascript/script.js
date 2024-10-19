@@ -73,39 +73,3 @@ fetch("data/products.json")
   .catch((error) => {
     console.error("Błąd wczytywania produktów:", error);
   });
-
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("data/products.json")
-    .then((response) => response.json())
-    .then((products) => {
-      if (products && products.length > 0) {
-        const latestProduct = products.reduce((prev, current) => {
-          return prev.id > current.id ? prev : current;
-        });
-
-        displayLatestProduct(latestProduct);
-      }
-    })
-    .catch((error) => console.error("Błąd wczytywania produktów:", error));
-});
-
-function displayLatestProduct(product) {
-  const welcomeSection = document.querySelector(".welcome-section");
-
-  const productHTML = `
-    <div class="latest-product">
-      <h2>Ostatnio dodany produkt</h2>
-      <div class="product-card">
-        <div
-          class="product-image"
-          style="background-image: url('${product.image}')"
-        ></div>
-        <p class="product-name">${product.name}</p>
-        <p class="product-price">${product.price}</p>
-        <a href="${product.url}" class="product-link">Zobacz więcej</a>
-      </div>
-    </div>
-  `;
-
-  welcomeSection.insertAdjacentHTML("beforeend", productHTML);
-}
