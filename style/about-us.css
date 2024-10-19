@@ -1,12 +1,144 @@
-.o-nas {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
+/* style/about-us.css */
+
+/* Ogólny wygląd strony */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-.o-nas > h3 {
-  font-weight: 200;
+header {
+  background-color: #8a5fe2;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+header .nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header .nav a:hover {
+  text-decoration: underline;
+}
+
+header .about-us {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header .about-us:hover {
+  color: #ddd;
+}
+
+/* Sekcja O Nas */
+.o-nas {
+  width: 80%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.o-nas h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #8a5fe2;
+}
+
+.o-nas h3 {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #bbb;
+}
+
+.o-nas h3 strong {
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.o-nas ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.o-nas ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.o-nas ul li strong {
+  color: #fff;
+}
+
+.o-nas .text-onas {
+  margin-bottom: 25px;
+}
+
+.o-nas .hejka {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #8a5fe2;
+}
+
+footer {
+  background-color: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  color: #bbb;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .social-links {
+  margin-top: 15px;
+}
+
+footer .social-links a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+footer .social-links img {
+  width: 30px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .o-nas {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .o-nas h1 {
+    font-size: 2rem;
+  }
+
+  .o-nas h3 {
+    font-size: 1rem;
+  }
 }

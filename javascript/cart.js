@@ -52,13 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (removeButton) {
           removeButton.addEventListener("click", (event) => {
             const index = event.target.getAttribute("data-index");
+
             // Animacja przed usunięciem
             cartItem.classList.add("removing");
 
             // Usuwamy produkt po zakończeniu animacji
             setTimeout(() => {
               removeFromCart(index); // Usuwa produkt z koszyka
-            }, 1000); // Czas trwania animacji (1 sekunda)
+            }, 500); // Czas trwania animacji (0.5 sekundy)
           });
         }
 

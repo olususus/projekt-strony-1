@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Sigma</title>
-    <link rel="stylesheet" href="./style/style.css" />
+    <title>Project Sigma - Oferty</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,40 +13,42 @@
     <link rel="stylesheet" href="style/reset.css" />
     <script src="javascript/script.js" defer></script>
     <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="style/about-product.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/offer-carousel.css" />
   </head>
   <body>
     <header>
       <div class="logo">PROJECT SIGMA</div>
-      <a href="about-us.html" class="about-us">O Nas</a>
       <div class="nav">
         <a href="index.html" class="home-icon"
           ><img src="images/home.png" alt="homebutton"
         /></a>
-        <a href="products.html" class="products-link" id="products-button"
-          >Produkty</a
-        >
-
+        <a href="products.html" class="products-link">Produkty</a>
         <a href="cart.html" class="user-icon"
           ><img src="images/cart.png" alt="user icon"
         /></a>
       </div>
     </header>
+    <!-- Pasek informacyjny z ofertą McDonald's -->
+    <div class="promo-bar">
+      <p>
+        🥳 Nowość! Sprawdź naszą kolaborację z McDonald's:
+        <strong>MCCRISPY - McDonald's X Project Sigma</strong>. Kliknij, aby
+        dowiedzieć się więcej!
+      </p>
+      <a href="mcdonalds.html" class="promo-link">Zobacz ofertę</a>
+    </div>
+    <!-- Nagłówek nad karuzelą -->
+    <div class="offers-header">
+      <h2>Ostatnie Okazje</h2>
+    </div>
 
-    <main>
-      <div class="welcome-section">
-        <h1>Witaj!</h1>
-        <!-- Pole wyszukiwania -->
-        <input type="text" id="search-input" placeholder="Szukaj produktu..." />
-        <button onclick="searchProduct()" id="searchButton">Szukaj</button>
-
-        <!-- Kontener na ostatnio dodany produkt -->
-        <div id="latest-product-container">
-          <h1>Najnowszy Produkt</h1>
-          <!-- Produkt zostanie dynamicznie dodany tutaj przez JavaScript -->
-        </div>
+    <!-- Karuzela -->
+    <div class="offer-carousel">
+      <div class="carousel-container">
+        <!-- Oferty będą dodawane dynamicznie przez JavaScript -->
       </div>
-    </main>
+    </div>
 
     <footer>
       <p>&copy; Project Sigma 2024</p>
@@ -68,5 +69,7 @@
         </a>
       </div>
     </footer>
+
+    <script src="javascript/offer-carousel.js"></script>
   </body>
 </html>

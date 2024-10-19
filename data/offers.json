@@ -1,7 +1,7 @@
 [
   {
     "title": "Super Promocja na Energetyki",
-    "details": "Kup nasz najnowszy nap\u00f3j energetyczny o smaku tropikalnym w promocyjnej cenie!",
+    "details": "Kup nasz najnowszy napój energetyczny o smaku tropikalnym w promocyjnej cenie!",
     "price": 5.99,
     "expiryDate": "12 listopada 2024",
     "image": "images/products/produkt3.png",
@@ -10,9 +10,9 @@
   {
     "title": "PROJECT SIGMA X MCDONALDS",
     "details": "Wskocz prosto do restauracji McDonalds w Project Sigma! Dostawy do siłowni Project Sigma za darmo przy zamawianiu z naszej strony.",
-    "price": "ZALEZNA OD PRODUKTU",
+    "price": "ZALEŻNE OD PRODUKTU",
     "expiryDate": "12 listopada 2024",
-    "image": "images/offers/mcdonaldsxprojectsigma.png",
+    "image": "images/offers/mcdonalds1.png",
     "url": "product.html?id=1000"
   }
 ]

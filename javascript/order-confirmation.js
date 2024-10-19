@@ -53,6 +53,19 @@ document.addEventListener("DOMContentLoaded", () => {
     emailElement.innerText = orderData.email || "Brak adresu email";
   }
 
+  // Funkcja do usunięcia danych zamówienia z localStorage
+  function clearOrderData() {
+    localStorage.removeItem("order");
+  }
+
   // Wyświetlanie szczegółów zamówienia po załadowaniu strony
   displayOrderDetails();
+
+  // Dodanie nasłuchiwania na kliknięcie przycisku powrotu
+  const returnButton = document.querySelector("button");
+  if (returnButton) {
+    returnButton.addEventListener("click", () => {
+      clearOrderData(); // Usuwamy dane zamówienia przed przekierowaniem
+    });
+  }
 });

@@ -1,0 +1,112 @@
+/* Karuzela */
+.offer-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.offer-item {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Równomiernie rozkłada elementy */
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  min-height: 350px; /* Ustawiamy minimalną wysokość */
+}
+
+.offer-item:hover {
+  transform: translateY(-10px);
+}
+
+.offer-item img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain; /* Zachowanie proporcji obrazka */
+  object-position: center center;
+  margin-bottom: 20px;
+}
+
+.offer-item h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.offer-item p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.offer-item .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #8a5fe2;
+  margin-top: 15px;
+}
+
+/* Przycisk */
+.offer-item .btn {
+  padding: 12px 25px;
+  background-color: #8a5fe2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-top: auto; /* Wyrównanie do dołu */
+  transition: background-color 0.3s ease;
+}
+
+.offer-item .btn:hover {
+  background-color: #6f42c1;
+}
+
+/* Responsywność - Dostosowanie do mniejszych ekranów */
+@media (max-width: 768px) {
+  .offer-item {
+    padding: 15px;
+  }
+
+  .offer-item img {
+    max-height: 200px; /* Obrazki będą mniejsze */
+  }
+
+  .offer-item h2 {
+    font-size: 1.5rem;
+  }
+
+  .offer-item p {
+    font-size: 1rem;
+  }
+
+  .offer-item .price {
+    font-size: 1.3rem;
+  }
+
+  .offer-item .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}

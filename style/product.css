@@ -75,19 +75,28 @@ header {
   max-width: 800px;
 }
 
-/* Obrazek produktu */
-/* Obrazek produktu */
+/* Kontener dla obrazka produktu */
 .product-image {
-  width: 100%;
-  height: 300px;
-  background-size: contain; /* Upewnia się, że obraz będzie proporcjonalnie dopasowany */
-  background-position: center; /* Wyśrodkowanie obrazu */
+  width: 100%; /* Szerokość 100% kontenera */
+  height: 300px; /* Ustalamy stałą wysokość */
+  background-size: cover; /* Zapewnia, że obrazek będzie przycięty, ale wypełni cały kontener */
+  background-position: center; /* Wyśrodkowanie obrazka */
   background-repeat: no-repeat; /* Zapobiega powtarzaniu obrazu */
   display: flex;
   justify-content: center; /* Wyśrodkowanie poziome */
   align-items: center; /* Wyśrodkowanie pionowe */
-  border-radius: 8px;
+  border-radius: 8px; /* Zaokrąglenie rogów */
   margin-bottom: 20px;
+  overflow: hidden; /* Ukrywa część obrazu wychodzącą poza kontener */
+}
+
+/* Dla obrazków wykorzystujących img (jeśli zdecydujesz się na <img>) */
+.product-image img {
+  width: 100%; /* Zapewnia, że obrazek będzie miał pełną szerokość kontenera */
+  height: 100%; /* Ustawiamy pełną wysokość */
+  object-fit: cover; /* Obrazek będzie przycięty, ale wypełni cały kontener */
+  object-position: center; /* Wyśrodkowanie obrazu */
+  border-radius: 8px; /* Zaokrąglenie rogów */
 }
 
 /* Nazwa produktu */

@@ -31,5 +31,13 @@
     "image": "./images/products/produkt4.png",
     "url": "product.html?id=4",
     "description": "Opis: test test zmien to"
+  },
+  {
+    "id": 1000,
+    "name": "MCCRISPY - McDonalds X Project Sigma",
+    "price": "15 PLN",
+    "image": "./images/products/mcdonalds1.png",
+    "url": "product.html?id=1000",
+    "description": "Brakuje kalorii? Oto nasz najnowsza kolaboracja z McDonalds! Zapewni ci ona wiecej kalorii!"
   }
 ]
