@@ -1,26 +1,32 @@
+/* Resetowanie marginesów */
 body {
   margin: 0;
 }
 
+/* Ustawienie modelu pudełkowego dla wszystkich elementów */
 * {
   box-sizing: border-box;
 }
 
+/* Usunięcie dekoracji linków i dziedziczenie koloru */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* Usunięcie punktów z list */
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
+/* Dopasowanie obrazków do szerokości kontenera */
 img {
   max-width: 100%;
 }
 
+/* Usunięcie marginesów dla nagłówków i paragrafów */
 h1,
 h2,
 h3,
@@ -31,6 +37,7 @@ p {
   margin: 0;
 }
 
+/* Resetowanie stylów przycisków i inputów */
 button,
 input {
   background: none;

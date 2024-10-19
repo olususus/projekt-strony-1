@@ -26,11 +26,11 @@
 
   {
     "id": 4,
-    "name": "Koszulka Project Sigma",
-    "price": "69 PLN",
+    "name": "Koszulka Project Sigma [PROMOCJA]",
+    "price": "38 PLN",
     "image": "./images/products/produkt4.png",
     "url": "product.html?id=4",
-    "description": "Opis: test test zmien to"
+    "description": "PROMOCJA! WSZYSTKIE KOSZULKI 50% TANIEJ!"
   },
   {
     "id": 1000,

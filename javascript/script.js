@@ -34,8 +34,10 @@ fetch("data/products.json")
   .then((response) => response.json())
   .then((products) => {
     const productsContainer = document.getElementById("products-container");
+    const specialProductsContainer = document.getElementById(
+      "special-products-container"
+    );
 
-    // Przetwarzanie każdego produktu z pliku JSON
     products.forEach((product) => {
       const productCard = document.createElement("div");
       productCard.classList.add("product-card");
@@ -43,33 +45,39 @@ fetch("data/products.json")
       const productLink = document.createElement("a");
       productLink.href = product.url;
 
-      // Tworzenie div z obrazkiem produktu
       const productImageDiv = document.createElement("div");
       productImageDiv.classList.add("product-image");
       productImageDiv.style.backgroundImage = `url('${product.image}')`;
 
-      // Tworzenie nazwy produktu
       const productName = document.createElement("p");
       productName.classList.add("product-name");
       productName.textContent = product.name;
 
-      // Tworzenie ceny produktu
       const productPrice = document.createElement("p");
       productPrice.classList.add("product-price");
       productPrice.textContent = product.price;
 
-      // Dodanie obrazka, nazwy i ceny do linku
       productLink.appendChild(productImageDiv);
       productLink.appendChild(productName);
       productLink.appendChild(productPrice);
-
-      // Dodanie linku do karty produktu
       productCard.appendChild(productLink);
 
-      // Dodanie karty produktu do kontenera
-      productsContainer.appendChild(productCard);
+      // Przypisujemy produkty o ID > 999 do specjalnej kategorii
+      if (product.id > 999) {
+        specialProductsContainer.appendChild(productCard);
+      } else {
+        productsContainer.appendChild(productCard);
+      }
     });
   })
   .catch((error) => {
     console.error("Błąd wczytywania produktów:", error);
   });
+
+window.addEventListener("load", function () {
+  // Dodajemy klasę 'loaded' do body, aby uruchomić animację
+  document.body.classList.add("loaded");
+
+  // Dodajemy klasę 'loaded' do tytułu specjalnej kategorii
+  document.querySelector(".special-title").classList.add("loaded");
+});

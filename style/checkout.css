@@ -21,7 +21,7 @@ h4 {
 }
 
 .delivery-method input[type="radio"] {
-  display: none; /* Ukrycie domyślnych radio buttonów */
+  display: none;
 }
 
 .delivery-method label {
@@ -34,19 +34,14 @@ h4 {
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
-  display: block;
-  width: 150px; /* Ustawienie szerokości przycisków */
+  width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .delivery-method input[type="radio"]:checked + label {
   background-color: #8a5fe2;
   border-color: #8a5fe2;
   color: white;
-}
-
-.delivery-method input[type="radio"]:not(:checked) + label:hover {
-  background-color: #e0e0e0;
-  border-color: #8a5fe2;
 }
 
 .delivery-method input[type="radio"]:checked + label:hover {
@@ -59,16 +54,11 @@ h4 {
   border-color: #8a5fe2;
 }
 
-/* Dodanie cienia przyciskom */
-.delivery-method label {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .delivery-method label:active {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Adres dostawy */
+/* Adres dostawy i dane osobowe */
 .address-section,
 .personal-details {
   margin-bottom: 20px;
@@ -83,6 +73,7 @@ h4 {
   border-radius: 5px;
 }
 
+/* Przycisk 'Złóż zamówienie' */
 button#place-order {
   background-color: #8a5fe2;
   color: white;
@@ -99,6 +90,7 @@ button#place-order:hover {
   background-color: #6f47c2;
 }
 
+/* Stopka */
 footer {
   background-color: #333;
   color: white;

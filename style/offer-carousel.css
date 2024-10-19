@@ -1,112 +1,142 @@
-/* Karuzela */
-.offer-carousel {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 30px auto;
-  overflow: hidden;
+/* Stylizacja dla kontenera z ofertami */
+.offers-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
-.carousel-container {
-  display: flex;
-  transition: transform 1s ease-in-out;
-}
-
-.offer-item {
-  flex: 0 0 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Równomiernie rozkłada elementy */
-  align-items: center;
+/* Stylizacja poszczególnych ofert */
+.offer-card {
   background-color: #333;
-  color: white;
+  border-radius: 10px;
   padding: 20px;
-  border-radius: 8px;
-  margin-right: 20px;
+  margin: 15px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
-  position: relative;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
-  overflow: hidden;
-  min-height: 350px; /* Ustawiamy minimalną wysokość */
+  transform: scale(0.8);
+  opacity: 0;
+  animation: zoomIn 0.8s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.offer-item:hover {
-  transform: translateY(-10px);
+/* Animacja dla kontenera ofert (fade-in) */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
-.offer-item img {
+/* Animacja powiększania dla kart ofert (zoom-in) */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Stylizacja dla obrazka oferty */
+.offer-card img {
   width: 100%;
   height: auto;
-  max-height: 250px;
-  object-fit: contain; /* Zachowanie proporcji obrazka */
-  object-position: center center;
-  margin-bottom: 20px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-.offer-item h2 {
-  font-size: 2rem;
+/* Tytuł oferty */
+.offer-card .offer-title {
+  font-size: 1.5rem;
+  color: white;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #fff;
 }
 
-.offer-item p {
-  font-size: 1.1rem;
-  margin: 10px 0;
-  line-height: 1.5;
-  color: #ddd;
+/* Opis oferty */
+.offer-card .offer-details {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 15px;
 }
 
-.offer-item .price {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Cena oferty */
+.offer-card .offer-price {
+  font-size: 1.2rem;
   color: #8a5fe2;
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-/* Przycisk */
-.offer-item .btn {
-  padding: 12px 25px;
+/* Link do oferty */
+.offer-card .offer-link {
+  padding: 10px 20px;
   background-color: #8a5fe2;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
   text-decoration: none;
-  font-size: 1.1rem;
-  margin-top: auto; /* Wyrównanie do dołu */
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
-.offer-item .btn:hover {
-  background-color: #6f42c1;
+.offer-card .offer-link:hover {
+  background-color: #5a33a6;
 }
 
-/* Responsywność - Dostosowanie do mniejszych ekranów */
-@media (max-width: 768px) {
-  .offer-item {
-    padding: 15px;
-  }
+/* Neonowe podświetlenie dla ofert zawierających McDonald's */
+.offer-card.neon-highlight {
+  border: 2px solid yellow;
+  box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+}
 
-  .offer-item img {
-    max-height: 200px; /* Obrazki będą mniejsze */
-  }
+.offer-card.neon-highlight:hover {
+  box-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00;
+  border-color: #ffcc00;
+}
 
-  .offer-item h2 {
-    font-size: 1.5rem;
-  }
+/* Stylizacja dla oferty z najwyższym id (pełna szerokość) */
+#latest-offer-fullrow .offer-card {
+  width: 100%;
+  display: block;
+  background-color: #444; /* Dodanie ciemniejszego tła */
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Zielony cień dla podświetlenia */
+  border: 2px solid #8a5fe2; /* Granatowe obramowanie */
+}
 
-  .offer-item p {
-    font-size: 1rem;
-  }
+#latest-offer-fullrow .offer-card:hover {
+  transform: scale(1.05); /* Powiększenie po najechaniu */
+  box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 40px rgba(0, 255, 0, 0.7); /* Zielony cień na hover */
+}
 
-  .offer-item .price {
-    font-size: 1.3rem;
-  }
+#latest-offer-fullrow .offer-card img {
+  object-fit: contain; /* Zachowanie proporcji obrazu */
+  width: 100%; /* Dopasowanie szerokości */
+  height: 300px; /* Ustalamy stałą wysokość, aby zdjęcie było dobrze widoczne */
+}
 
-  .offer-item .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
+/* Rząd ofert - wyświetlanie maksymalnie 3 w rzędzie */
+.offers-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Stylizacja kart ofert (3 w rzędzie) */
+.offer-card {
+  width: 30%;
+}
+
+/* Efekt powiększania karty oferty po najechaniu */
+.offer-card:hover {
+  transform: scale(1.05);
+}
+
+/* Kontener dla innych ofert (max 3 w rzędzie) */
+.other-offers-container {
+  margin-top: 20px;
 }

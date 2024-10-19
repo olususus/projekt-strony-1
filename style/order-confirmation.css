@@ -1,8 +1,8 @@
 /* Ogólne ustawienia dla całej strony */
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #1a1a1a; /* Ciemniejsze tło strony */
-  color: white; /* Kolor tekstu biały, lepszy kontrast z ciemnym tłem */
+  background-color: #1a1a1a;
+  color: white;
   margin: 0;
   padding: 0;
 }
@@ -31,24 +31,28 @@ header .nav a {
   font-size: 18px;
 }
 
+/* Wspólna klasa dla tekstu */
+.text-white {
+  color: white;
+}
+
 /* Kontener na potwierdzenie zamówienia */
 #confirmation-container {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
-  background-color: #2a2a2a; /* Ciemniejsze tło dla lepszej czytelności */
+  background-color: #2a2a2a;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #confirmation-container h2 {
-  color: #8a5fe2; /* Kolor nagłówka */
+  color: #8a5fe2;
   font-size: 24px;
 }
 
 #confirmation-container p {
   font-size: 16px;
-  color: #fff; /* Biały tekst dla lepszej widoczności */
 }
 
 /* Szczegóły zamówienia */
@@ -59,7 +63,6 @@ header .nav a {
 #order-details p {
   font-size: 16px;
   margin: 8px 0;
-  color: #fff; /* Biały tekst w szczegółach zamówienia */
 }
 
 /* Produkty w zamówieniu */
@@ -68,7 +71,7 @@ header .nav a {
 }
 
 #order-items .order-item {
-  background-color: #3a3a3a; /* Ciemniejsze tło dla produktów */
+  background-color: #3a3a3a;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -77,12 +80,6 @@ header .nav a {
 
 #order-items .order-item p {
   font-size: 14px;
-  color: #fff; /* Biały tekst dla produktów w zamówieniu */
-}
-
-/* Usuń ewentualne style związane z obrazkami (jeśli były) */
-#order-items .order-item img {
-  display: none;
 }
 
 /* Łączna cena */
@@ -131,16 +128,12 @@ footer .social-links a img {
 
 /* Stylowanie nagłówków sekcji zamówienia */
 #order-details h3 {
-  color: #8a5fe2; /* Kolor nagłówków sekcji */
+  color: #8a5fe2;
 }
 
-/* Stylowanie szczegółów zamówienia */
+/* Stylowanie szczegółów zamówienia i produktów */
 #order-details p,
-#order-items p {
-  color: #fff; /* Biały kolor tekstu dla szczegółów zamówienia */
-}
-
-/* Stylowanie produktów w zamówieniu */
+#order-items p,
 .order-item p {
-  color: #fff; /* Biały kolor tekstu dla produktów w zamówieniu */
+  color: white;
 }

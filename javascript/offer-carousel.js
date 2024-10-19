@@ -1,56 +1,95 @@
-// javascript/offer-carousel.js
+fetch("data/offers.json")
+  .then((response) => response.json())
+  .then((offers) => {
+    const offersContainer = document.getElementById("offers-container");
+    const latestOfferFullRow = document.getElementById("latest-offer-fullrow");
+    const otherOffersContainer = document.getElementById(
+      "other-offers-container"
+    );
 
-// Funkcja do generowania oferty
-function createOfferElement(offer) {
-  const offerElement = document.createElement("div");
-  offerElement.classList.add("offer-item");
+    // Sortowanie ofert według id (od największego do najmniejszego)
+    offers.sort((a, b) => b.id - a.id);
 
-  offerElement.innerHTML = `
-    <img src="${offer.image}" alt="${offer.title}" />
-    <h2>${offer.title}</h2>
-    <p>${offer.details}</p>
-    <p class="price">${offer.price} PLN</p>
-    <p class="expiry-date">Wygasa: ${offer.expiryDate}</p>
-    <a href="${offer.url}" class="btn">Zobacz ofertę</a>
-  `;
-  return offerElement;
-}
+    // Wyświetlenie oferty z najwyższym id w sekcji "ostatnich ofert" zajmującej cały rząd
+    const latestOffer = offers[0];
+    const latestOfferCard = document.createElement("div");
+    latestOfferCard.classList.add("offer-card", "fullrow");
 
-// Funkcja inicjalizująca karuzelę
-function initCarousel(offers) {
-  const carouselContainer = document.querySelector(".carousel-container");
+    const latestOfferImage = document.createElement("img");
+    latestOfferImage.src = latestOffer.image;
+    latestOfferImage.alt = latestOffer.title;
 
-  // Usuwamy wszystkie wcześniejsze oferty
-  carouselContainer.innerHTML = "";
+    const latestOfferTitle = document.createElement("p");
+    latestOfferTitle.classList.add("offer-title");
+    latestOfferTitle.textContent = latestOffer.title;
 
-  offers.forEach((offer) => {
-    const offerElement = createOfferElement(offer);
-    carouselContainer.appendChild(offerElement);
-  });
+    const latestOfferDetails = document.createElement("p");
+    latestOfferDetails.classList.add("offer-details");
+    latestOfferDetails.textContent = latestOffer.details;
 
-  let currentIndex = 0;
+    const latestOfferPrice = document.createElement("p");
+    latestOfferPrice.classList.add("offer-price");
+    latestOfferPrice.textContent = `Cena: ${latestOffer.price}`;
 
-  function moveToNextOffer() {
-    currentIndex++;
-    if (currentIndex >= offers.length) currentIndex = 0; // Reset, jeśli osiągniemy ostatnią ofertę
+    const latestOfferLink = document.createElement("a");
+    latestOfferLink.href = latestOffer.url;
+    latestOfferLink.classList.add("offer-link");
+    latestOfferLink.textContent = "Sprawdź ofertę";
 
-    carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
+    latestOfferCard.appendChild(latestOfferImage);
+    latestOfferCard.appendChild(latestOfferTitle);
+    latestOfferCard.appendChild(latestOfferDetails);
+    latestOfferCard.appendChild(latestOfferPrice);
+    latestOfferCard.appendChild(latestOfferLink);
 
-  setInterval(moveToNextOffer, 3000); // Zmiana co 3 sekundy
-}
+    latestOfferFullRow.appendChild(latestOfferCard);
 
-// Funkcja do ładowania danych z pliku JSON
-function loadOffers() {
-  fetch("data/offers.json")
-    .then((response) => response.json())
-    .then((data) => {
-      initCarousel(data); // Inicjalizujemy karuzelę z danymi z pliku
-    })
-    .catch((error) => {
-      console.error("Błąd podczas ładowania ofert:", error);
+    // Tworzenie kontenera dla innych ofert (max 3 w rzędzie)
+    otherOffersContainer.classList.add("offers-row");
+
+    // Dodanie do kontenera maksymalnie 3 innych ofert
+    offers.slice(1, 4).forEach((offer, index) => {
+      const offerCard = document.createElement("div");
+      offerCard.classList.add("offer-card");
+      offerCard.style.animationDelay = `${index * 0.2}s`;
+
+      const offerImage = document.createElement("img");
+      offerImage.src = offer.image;
+      offerImage.alt = offer.title;
+
+      const offerTitle = document.createElement("p");
+      offerTitle.classList.add("offer-title");
+      offerTitle.textContent = offer.title;
+
+      const offerDetails = document.createElement("p");
+      offerDetails.classList.add("offer-details");
+      offerDetails.textContent = offer.details;
+
+      const offerPrice = document.createElement("p");
+      offerPrice.classList.add("offer-price");
+      offerPrice.textContent = `Cena: ${offer.price}`;
+
+      const offerLink = document.createElement("a");
+      offerLink.href = offer.url;
+      offerLink.classList.add("offer-link");
+      offerLink.textContent = "Sprawdź ofertę";
+
+      offerCard.appendChild(offerImage);
+      offerCard.appendChild(offerTitle);
+      offerCard.appendChild(offerDetails);
+      offerCard.appendChild(offerPrice);
+      offerCard.appendChild(offerLink);
+
+      otherOffersContainer.appendChild(offerCard);
     });
-}
 
-// Uruchomienie karuzeli po załadowaniu strony
-window.addEventListener("load", loadOffers);
+    // Dodanie kontenerów do głównego kontenera
+    offersContainer.appendChild(latestOfferFullRow);
+    offersContainer.appendChild(otherOffersContainer);
+
+    // Animacja dla kontenera z ofertami
+    offersContainer.style.animation = "fadeIn 1s forwards";
+  })
+  .catch((error) => {
+    console.error("Błąd wczytywania ofert:", error);
+  });

@@ -1,12 +1,14 @@
+/* Resetowanie marginesów, paddingu i ustawienie box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Podstawowe style dla całej strony */
 html,
 body {
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #1a1a1a;
   color: white;
   display: flex;
@@ -14,19 +16,19 @@ body {
   min-height: 100vh;
   opacity: 1;
   transition: opacity 0.5s ease;
-  margin: 0;
-  height: 100%;
 }
 
 body.fade-out {
   opacity: 0;
 }
 
+/* Sekcja główna */
 .main-content {
   flex: 1;
   padding-bottom: 50px;
 }
 
+/* Nagłówek */
 header {
   background-color: #8a5fe2;
   padding: 15px;
@@ -45,12 +47,9 @@ header {
   align-items: center;
 }
 
-.nav > .home-icon > img {
-  height: 40px;
-}
-
+.nav > .home-icon > img,
 .nav > .user-icon > img {
-  height: 35px;
+  height: 40px;
 }
 
 .products-link,
@@ -70,135 +69,80 @@ header {
 .user-icon {
   font-size: 1.5em;
   margin: 0 10px;
-  text-decoration: none;
   color: white;
 }
 
+/* Pasek wyszukiwania */
 .search-bar {
   padding: 5px;
   border-radius: 5px;
   border: none;
 }
 
-.welcome-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-}
-
-.welcome-section h1 {
-  font-size: 4em;
-  font-weight: bold;
-  background: linear-gradient(to right, #4a6cf7, #f56f91);
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-bottom: 20px;
-}
-
-/* Pole wyszukiwania */
 #search-input {
   padding: 10px;
   margin: 20px 0;
   width: 300px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid #8a5fe2; /* Początkowy kolor obramowania */
+  border: 1px solid #8a5fe2;
   background-color: #333;
   color: white;
-  transition: all 0.3s ease; /* Płynne przejście */
+  transition: all 0.3s ease;
 }
 
-/* Efekt po kliknięciu (focus) */
 #search-input:focus {
-  outline: none; /* Usuwamy domyślny outline */
-  border: 2px solid red; /* Czerwony kolor obramowania */
-  width: 350px; /* Powiększenie pola */
-  padding: 10px 15px; /* Zwiększenie przestrzeni wewnętrznej */
+  outline: none;
+  border: 2px solid red;
+  width: 350px;
+  padding: 10px 15px;
 }
 
-/* Stylizacja przycisku */
 #searchButton {
   padding: 10px 20px;
   background-color: #8a5fe2;
   color: white;
-  border: 2px solid #6b6bd4; /* Dodanie obramowania w kolorze #6b6bd4 */
-  border-radius: 8px; /* Zaokrąglone rogi */
+  border: 2px solid #6b6bd4;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease,
-    border-color 0.3s ease; /* Płynne przejście */
+    border-color 0.3s ease;
 }
 
-/* Efekt na hover dla przycisku */
 #searchButton:hover {
-  background-color: #5a33a6; /* Zmiana tła przy hoverze */
-  transform: scale(1.1); /* Powiększenie przycisku przy hoverze */
-  border-color: #8a5fe2; /* Zmiana koloru obramowania przy hoverze */
+  background-color: #5a33a6;
+  transform: scale(1.1);
+  border-color: #8a5fe2;
 }
 
-/* Efekt na focus dla przycisku */
 #searchButton:focus {
-  outline: none; /* Usunięcie obramowania przy kliknięciu */
-  box-shadow: 0 0 5px #5a33a6; /* Cień przy kliknięciu */
-  border-color: #5a33a6; /* Zmiana koloru obramowania przy focus */
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #8a5fe2;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #5a33a6;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #8a5fe2;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #5a33a6;
+  outline: none;
+  box-shadow: 0 0 5px #5a33a6;
+  border-color: #5a33a6;
 }
 
 /* Stopka */
 footer {
-  background-color: #333; /* Tło stopki */
-  color: white; /* Kolor tekstu */
-  text-align: center; /* Wyśrodkowanie tekstu */
-  padding: 20px 0; /* Odstępy wewnętrzne */
-  font-size: 14px; /* Rozmiar czcionki */
-  width: 100%; /* Zapewnia pełną szerokość stopki */
-  position: relative; /* Umożliwia kontrolowanie pozycji stopki */
-  bottom: 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  width: 100%;
 }
 
-/* Efekt hover dla tekstu w stopce */
 footer p {
   margin: 0;
-  font-family: "Montserrat", sans-serif; /* Czcionka */
-  letter-spacing: 1px; /* Rozstawienie liter */
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
   font-weight: 300;
-  transition: color 0.3s ease; /* Płynna zmiana koloru */
+  transition: color 0.3s ease;
 }
 
 footer p:hover {
-  color: #8a5fe2; /* Zmiana koloru na hover */
+  color: #8a5fe2;
 }
 
-/* Sekcja z ikonami społecznościowymi */
 footer .social-links {
   margin-top: 10px;
 }
@@ -216,9 +160,10 @@ footer .social-links img {
 }
 
 footer .social-links img:hover {
-  transform: scale(1.2); /* Powiększenie ikony po najechaniu */
+  transform: scale(1.2);
 }
 
+/* Sekcja produktów */
 .latest-product {
   margin-top: 30px;
   text-align: center;
@@ -274,97 +219,21 @@ footer .social-links img:hover {
   background-color: #5a33a6;
 }
 
-body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #1a1a1a;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #8a5fe2;
-  padding: 20px;
-  text-align: center;
-}
-
-header .logo {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-nav a {
-  margin: 0 10px;
-  color: #fff;
-  text-decoration: none;
-}
-
-h2 {
-  color: #8a5fe2;
-  text-align: center;
-  margin-top: 40px;
-}
-
-.products-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px 0;
-}
-
-.product-card {
-  background-color: #222;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 10px;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.product-info {
-  padding-top: 10px;
-}
-
-.product-title {
-  font-size: 1.5rem;
-  color: #fff;
-}
-
-.product-price {
-  font-size: 1.2rem;
-  color: #8a5fe2;
-}
-
-.product-description {
-  font-size: 1rem;
-  color: #ccc;
-  margin: 10px 0;
-}
-
-.product-link {
-  display: block;
-  margin-top: 10px;
-  padding: 8px;
-  background-color: #8a5fe2;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.product-link:hover {
-  background-color: #6e4cb0;
+/* Animacja powitania */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Pasek informacyjny */
 .promo-bar {
-  background: linear-gradient(to right, #f56f91, #ffca5a); /* Kolor gradientu */
+  background: linear-gradient(to right, #f56f91, #ffca5a);
   padding: 15px;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -372,6 +241,7 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease-out;
 }
 
 .promo-bar p {

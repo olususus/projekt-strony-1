@@ -1,3 +1,4 @@
+/* Stylizacja body */
 body {
   font-family: Montserrat, sans-serif;
   background-color: #1a1a1a;
@@ -18,8 +19,8 @@ body {
 
 /* Nagłówek */
 header {
-  background-color: #f8d600; /* Kolor żółty McDonald's */
-  padding: 10px 20px;
+  background-color: #8a5fe2;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,33 +30,29 @@ header {
 .logo {
   font-size: 1.5em;
   font-weight: bold;
-  color: #1a1a1a; /* Ciemny kolor tekstu */
+  color: #1a1a1a;
   letter-spacing: 2px;
 }
 
 .nav {
   display: flex;
-  gap: 20px; /* Odstęp między linkami */
+  gap: 20px;
 }
 
 .nav > a {
   font-size: 1.1em;
   font-weight: bold;
-  color: #1a1a1a; /* Ciemny kolor tekstu */
+  color: #1a1a1a;
   text-decoration: none;
-  text-transform: uppercase; /* Duże litery */
+  text-transform: uppercase;
 }
 
 .nav > a:hover {
-  color: #8a5fe2; /* Kolor przycisku przy hover (fioletowy) */
+  color: #8a5fe2;
 }
 
-/* Przycisk "home" z małym cieniem */
-.home-icon img {
-  width: 30px;
-  height: 30px;
-}
-
+/* Ikony */
+.home-icon img,
 .cart-link img {
   width: 30px;
   height: 30px;
@@ -63,14 +60,14 @@ header {
 }
 
 .cart-link img:hover {
-  transform: scale(1.1); /* Efekt powiększenia ikony przy hover */
+  transform: scale(1.1);
 }
 
 /* Lista produktów */
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 20px;
 }
 
@@ -78,7 +75,7 @@ header {
   background-color: #222;
   border-radius: 10px;
   padding: 15px;
-  width: 250px;
+  flex-basis: calc(33.33% - 20px); /* 3 produkty w rzędzie */
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
@@ -125,6 +122,7 @@ header {
   background-color: #ffb800;
 }
 
+/* Stopka */
 footer {
   background-color: #333;
   color: white;
@@ -150,51 +148,4 @@ footer .social-links img {
 
 footer .social-links img:hover {
   transform: scale(1.2);
-}
-
-header {
-  background-color: #8a5fe2;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.nav > .home-icon > img {
-  height: 40px;
-}
-
-.nav > .user-icon > img {
-  height: 35px;
-}
-
-.products-link,
-.about-us {
-  padding: 5px 10px;
-  background-color: #6f42c1;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.products-link:hover,
-.about-us:hover {
-  background-color: #5a33a6;
-}
-
-.home-icon,
-.user-icon {
-  font-size: 1.5em;
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
 }

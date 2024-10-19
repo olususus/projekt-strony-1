@@ -1,7 +1,7 @@
-/* Efekt pojawiania się strony w products.html */
+/* Ustawienia ogólne */
 body {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* Czas animacji */
+  transition: opacity 0.5s ease-in-out;
   font-family: "Montserrat", sans-serif;
   background-color: #1a1a1a;
   color: white;
@@ -10,7 +10,7 @@ body {
 }
 
 body.loaded {
-  opacity: 1; /* Po załadowaniu strony - pełna przezroczystość */
+  opacity: 1;
 }
 
 /* Nagłówek */
@@ -32,20 +32,16 @@ header {
   align-items: center;
 }
 
-.nav > .home-icon > img {
+.nav > .home-icon > img,
+.nav > .user-icon > img {
   height: 40px;
 }
 
-.nav > .user-icon > img {
-  height: 35px;
-}
-
-/* Linki - usunięcie linii i efektów hover */
 .products-link {
   padding: 5px 10px;
   background-color: #6f42c1;
   border-radius: 5px;
-  text-decoration: none; /* Usunięcie linii pod linkiem */
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
@@ -53,59 +49,55 @@ header {
   background-color: #5a33a6;
 }
 
-.home-icon,
-.user-icon {
-  font-size: 1.5em;
-  margin: 0 10px;
-  text-decoration: none; /* Usunięcie linii pod linkiem */
-  color: white;
-}
-
-/* Kafelki z produktami */
-/* Kafelki z produktami */
+/* Kafelki produktów */
 .products-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Trzy kolumny w rzędzie */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
-  justify-content: center; /* Wyśrodkowanie kolumn */
-  align-items: start; /* Ustawienie elementów w górnej części kontenera */
-  width: 100%; /* Zapewnienie pełnej szerokości */
-  margin: 0 auto; /* Wyśrodkowanie kontenera */
-  text-align: center; /* Wyśrodkowanie tekstu w każdym kafelku */
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .product-card {
-  position: relative; /* Aby linia mogła być umieszczona absolutnie */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Płynne powiększenie i cień */
+  position: relative;
   background-color: #333;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-  transform: scale(1.05); /* Powiększenie kafelka */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Cień przy powiększeniu */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .product-image {
   width: 100%;
   height: 150px;
-  background-size: cover; /* Dopasowanie obrazu do rozmiaru */
-  background-position: center; /* Wyśrodkowanie obrazu */
+  background-size: cover;
+  background-position: center;
   margin-bottom: 10px;
   border-radius: 8px;
 }
 
 .product-name {
   font-size: 18px;
-  color: #fff;
-  margin: 0;
 }
 
-/* Cena produktu */
 .product-price {
   font-size: 16px;
   color: #8a5fe2;
@@ -114,35 +106,32 @@ header {
 
 /* Stopka */
 footer {
-  background-color: #333; /* Tło stopki */
-  color: white; /* Kolor tekstu */
-  text-align: center; /* Wyśrodkowanie tekstu */
-  padding: 20px 0; /* Odstępy wewnętrzne */
-  font-size: 14px; /* Rozmiar czcionki */
-  width: 100%; /* Zapewnia pełną szerokość stopki */
-  position: relative; /* Umożliwia kontrolowanie pozycji stopki */
-  bottom: 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
 }
 
 footer p {
   margin: 0;
-  font-family: "Montserrat", sans-serif; /* Czcionka */
-  letter-spacing: 1px; /* Rozstawienie liter */
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
   font-weight: 300;
-  transition: color 0.3s ease; /* Płynna zmiana koloru */
+  transition: color 0.3s ease;
 }
 
 footer p:hover {
-  color: #8a5fe2; /* Zmiana koloru na hover */
+  color: #8a5fe2;
 }
 
-/* Sekcja z ikonami społecznościowymi */
+/* Ikony społecznościowe w stopce */
 footer .social-links {
   margin-top: 10px;
 }
 
 footer .social-links a {
-  text-decoration: none; /* Usunięcie linii pod linkami */
+  text-decoration: none;
   display: inline-block;
   margin: 0 15px;
 }
@@ -154,10 +143,77 @@ footer .social-links img {
 }
 
 footer .social-links img:hover {
-  transform: scale(1.2); /* Powiększenie ikony po najechaniu */
+  transform: scale(1.2);
 }
 
-:visited {
-  text-decoration: none;
-  text-transform: none;
+/* Animacja tekstu */
+.special-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  color: #ffd700;
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.special-title.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.special-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 100%;
+  height: 0.2em;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  animation: slide 3s infinite;
+  transform: translateY(-50%);
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+/* Animacja specjalnych produktów */
+#special-products-container .product-card {
+  position: relative;
+  background-color: #444;
+  transform: rotateY(0deg);
+  animation: pulse 2s infinite;
+  border: 2px solid #8a5fe2;
+  box-shadow: 0 0 15px rgba(138, 95, 226, 0.7), 0 0 30px rgba(138, 95, 226, 0.5);
+  transition: box-shadow 0.5s ease, transform 0.4s ease;
+}
+
+#special-products-container .product-card:hover {
+  transform: scale(1.2) rotateY(360deg);
+  box-shadow: 0 0 25px rgba(138, 95, 226, 1), 0 0 50px rgba(138, 95, 226, 0.7);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

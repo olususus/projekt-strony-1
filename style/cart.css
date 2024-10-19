@@ -14,8 +14,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0;
-  height: 100%;
 }
 
 /* Pasek nawigacyjny */
@@ -37,12 +35,9 @@ header {
   align-items: center;
 }
 
-.nav > .home-icon > img {
-  height: 40px;
-}
-
+.nav > .home-icon > img,
 .nav > .user-icon > img {
-  height: 35px;
+  height: 40px;
 }
 
 .products-link {
@@ -78,11 +73,8 @@ header {
 /* Lista produktów w koszyku */
 #cart-items {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  ); /* Tworzenie siatki */
-  gap: 20px; /* Przestrzeń między produktami */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
   padding: 0 20px;
 }
 
@@ -98,7 +90,7 @@ header {
 }
 
 .cart-item:hover {
-  transform: translateY(-5px); /* Przesunięcie w górę na hover */
+  transform: translateY(-5px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -112,28 +104,14 @@ header {
 }
 
 .cart-item img:hover {
-  transform: scale(1.05); /* Powiększenie zdjęcia na hover */
-}
-
-.cart-item .item-info {
-  text-align: center;
-}
-
-.cart-item .item-info h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.cart-item .item-info p {
-  font-size: 1.1em;
-  color: #ccc;
+  transform: scale(1.05);
 }
 
 /* Animacja usuwania produktu z koszyka */
 .cart-item.removing {
-  opacity: 0; /* Spowoduje stopniowe znikanie produktu */
-  transform: translateX(-100%); /* Przesunie produkt w lewo */
-  transition: all 0.5s ease-out; /* Płynna animacja */
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-out;
 }
 
 /* Stylowanie przycisku 'Usuń' */
@@ -180,7 +158,6 @@ footer {
   bottom: 0;
 }
 
-/* Efekt hover dla tekstu w stopce */
 footer p {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -211,13 +188,13 @@ footer .social-links img {
 }
 
 footer .social-links img:hover {
-  transform: scale(1.2); /* Powiększenie ikony po najechaniu */
+  transform: scale(1.2);
 }
 
-/* Stylowanie przycisku "Dalej" z ikonką */
+/* Przycisk przejścia do następnej strony */
 .next-btn {
-  background-color: #8a5fe2; /* Kolor tła przycisku */
-  color: white; /* Kolor tekstu */
+  background-color: #8a5fe2;
+  color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   padding: 10px 20px;
@@ -228,15 +205,15 @@ footer .social-links img:hover {
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
-  margin-top: 20px; /* Odstęp od góry */
+  margin-top: 20px;
 }
 
 .next-btn img {
   margin-left: 10px;
-  width: 16px; /* Wymiary ikony */
+  width: 16px;
   height: 16px;
 }
 
 .next-btn:hover {
-  background-color: #6f47c2; /* Efekt hover */
+  background-color: #6f47c2;
 }

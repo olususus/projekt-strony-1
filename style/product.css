@@ -1,12 +1,17 @@
-/* Ustawienia ogólne */
+/* Ogólne ustawienia dla całej strony */
+* {
+  box-sizing: border-box; /* Umożliwia lepszą kontrolę nad wymiarami elementów */
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #1a1a1a; /* Tło zgodne z wcześniejszymi ustawieniami */
+  background-color: #1a1a1a;
   color: white;
   margin: 0;
   padding: 0;
 }
 
+/* Nagłówek */
 header {
   background-color: #8a5fe2;
   padding: 15px;
@@ -52,6 +57,11 @@ header {
   color: white;
 }
 
+/* Wspólna klasa dla białego tekstu */
+.text-white {
+  color: white;
+}
+
 /* Kontener główny strony produktu */
 .product-container {
   display: flex;
@@ -68,7 +78,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #333; /* Tło karty produktu */
+  background-color: #333;
   padding: 30px;
   border-radius: 8px;
   width: 80%;
@@ -77,26 +87,26 @@ header {
 
 /* Kontener dla obrazka produktu */
 .product-image {
-  width: 100%; /* Szerokość 100% kontenera */
-  height: 300px; /* Ustalamy stałą wysokość */
-  background-size: cover; /* Zapewnia, że obrazek będzie przycięty, ale wypełni cały kontener */
-  background-position: center; /* Wyśrodkowanie obrazka */
-  background-repeat: no-repeat; /* Zapobiega powtarzaniu obrazu */
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: center; /* Wyśrodkowanie poziome */
-  align-items: center; /* Wyśrodkowanie pionowe */
-  border-radius: 8px; /* Zaokrąglenie rogów */
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
   margin-bottom: 20px;
-  overflow: hidden; /* Ukrywa część obrazu wychodzącą poza kontener */
+  overflow: hidden;
 }
 
 /* Dla obrazków wykorzystujących img (jeśli zdecydujesz się na <img>) */
 .product-image img {
-  width: 100%; /* Zapewnia, że obrazek będzie miał pełną szerokość kontenera */
-  height: 100%; /* Ustawiamy pełną wysokość */
-  object-fit: cover; /* Obrazek będzie przycięty, ale wypełni cały kontener */
-  object-position: center; /* Wyśrodkowanie obrazu */
-  border-radius: 8px; /* Zaokrąglenie rogów */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
 }
 
 /* Nazwa produktu */
@@ -118,12 +128,12 @@ header {
 
 .product-price {
   font-size: 1.5rem;
-  color: #8a5fe2; /* Kolor ceny */
+  color: #8a5fe2;
 }
 
 #add-tocart {
   padding: 10px 20px;
-  background-color: #8a5fe2; /* Kolor przycisku */
+  background-color: #8a5fe2;
   color: white;
   border: none;
   border-radius: 8px;
@@ -132,32 +142,31 @@ header {
 }
 
 #add-tocart:hover {
-  background-color: #5a33a6; /* Efekt na hover */
+  background-color: #5a33a6;
 }
 
 /* Stopka */
 footer {
-  background-color: #333; /* Tło stopki */
-  color: white; /* Kolor tekstu */
-  text-align: center; /* Wyśrodkowanie tekstu */
-  padding: 20px 0; /* Odstępy wewnętrzne */
-  font-size: 14px; /* Rozmiar czcionki */
-  width: 100%; /* Zapewnia pełną szerokość stopki */
-  position: relative; /* Umożliwia kontrolowanie pozycji stopki */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  width: 100%;
+  position: relative;
   bottom: 0;
 }
 
-/* Efekt hover dla tekstu w stopce */
 footer p {
   margin: 0;
-  font-family: "Montserrat", sans-serif; /* Czcionka */
-  letter-spacing: 1px; /* Rozstawienie liter */
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
   font-weight: 300;
-  transition: color 0.3s ease; /* Płynna zmiana koloru */
+  transition: color 0.3s ease;
 }
 
 footer p:hover {
-  color: #8a5fe2; /* Zmiana koloru na hover */
+  color: #8a5fe2;
 }
 
 /* Sekcja z ikonami społecznościowymi */
@@ -175,8 +184,9 @@ footer .social-links img {
   width: 30px;
   height: 30px;
   transition: transform 0.3s ease;
+  transform-origin: center; /* Ustalamy punkt odniesienia */
 }
 
 footer .social-links img:hover {
-  transform: scale(1.2); /* Powiększenie ikony po najechaniu */
+  transform: scale(1.2);
 }
