@@ -4,8 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout</title>
+
+    <!-- Preload czcionek i zasobów -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style/checkout.css" />
     <link rel="stylesheet" href="style/style.css" />
+
+    <!-- Favicon -->
     <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
   </head>
   <body>
@@ -13,87 +25,72 @@
       <div class="logo">PROJECT SIGMA</div>
       <a href="about-us.html" class="about-us">O Nas</a>
       <div class="nav">
-        <a href="index.html" class="home-icon"
-          ><img src="images/home.png" alt="homebutton"
-        /></a>
+        <a href="index.html" class="home-icon">
+          <img src="images/home.png" alt="homebutton" />
+        </a>
         <a href="products.html" class="products-link" id="products-button"
           >Produkty</a
         >
-
-        <a href="cart.html" class="user-icon"
-          ><img src="images/cart.png" alt="user icon"
-        /></a>
+        <a href="cart.html" class="user-icon">
+          <img src="images/cart.png" alt="Koszyk" />
+        </a>
       </div>
     </header>
-    <main>
-      <div id="checkout-container">
-        <!-- Produkty w koszyku -->
-        <h2>Twoje zamówienie</h2>
-        <div id="checkout-items"></div>
-        <!-- Sekcja wyświetlająca łączną cenę -->
-        <section id="total-price-section">
-          <h3>Łączna cena: <span id="total-price">0 PLN</span></h3>
-        </section>
 
-        <!-- Sposób dostawy i dane osobowe -->
-        <section id="delivery-details">
-          <h3>Wybierz sposób dostawy</h3>
-          <div class="delivery-method">
-            <input
-              type="radio"
-              id="inpost"
-              name="delivery"
-              value="InPost"
-              checked
-            />
-            <label for="inpost">InPost</label>
+    <!-- Główna zawartość strony -->
+    <main id="checkout-container">
+      <h2>Twoje zamówienie</h2>
+      <div id="checkout-items"></div>
 
-            <input type="radio" id="dhl" name="delivery" value="DHL" />
-            <label for="dhl">DHL</label>
+      <!-- Sekcja wyświetlająca łączną cenę -->
+      <section id="total-price-section">
+        <h3>Łączna cena: <span id="total-price">0 PLN</span></h3>
+      </section>
 
-            <input type="radio" id="dpd" name="delivery" value="DPD" />
-            <label for="dpd">DPD</label>
-          </div>
+      <!-- Sposób dostawy i dane osobowe -->
+      <section id="delivery-details">
+        <h3>Wybierz sposób dostawy</h3>
+        <div class="delivery-method">
+          <input
+            type="radio"
+            id="inpost"
+            name="delivery"
+            value="InPost"
+            checked
+          />
+          <label for="inpost">InPost</label>
 
-          <!-- Adres dostawy -->
-          <div class="address-section">
-            <h4>Adres dostawy</h4>
-            <input
-              type="text"
-              id="address"
-              placeholder="Wpisz adres dostawy..."
-              required
-            />
-          </div>
+          <input type="radio" id="dhl" name="delivery" value="DHL" />
+          <label for="dhl">DHL</label>
 
-          <!-- Dane osobowe -->
-          <div class="personal-details">
-            <h4>Dane osobowe</h4>
-            <input
-              type="text"
-              id="name"
-              placeholder="Imię i nazwisko"
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              placeholder="Adres e-mail"
-              required
-            />
-            <input
-              type="tel"
-              id="phone"
-              placeholder="Numer telefonu"
-              required
-            />
-          </div>
+          <input type="radio" id="dpd" name="delivery" value="DPD" />
+          <label for="dpd">DPD</label>
+        </div>
 
-          <button id="place-order" class="btn-order">Złóż zamówienie</button>
-        </section>
-      </div>
+        <!-- Adres dostawy -->
+        <div class="address-section">
+          <h4>Adres dostawy</h4>
+          <input
+            type="text"
+            id="address"
+            placeholder="Wpisz adres dostawy..."
+            required
+          />
+        </div>
+
+        <!-- Dane osobowe -->
+        <div class="personal-details">
+          <h4>Dane osobowe</h4>
+          <input type="text" id="name" placeholder="Imię i nazwisko" required />
+          <input type="email" id="email" placeholder="Adres e-mail" required />
+          <input type="tel" id="phone" placeholder="Numer telefonu" required />
+        </div>
+
+        <button id="place-order" class="btn-order">Złóż zamówienie</button>
+      </section>
     </main>
 
+    <!-- Stopka -->
     <footer>
       <p>&copy; Project Sigma 2024</p>
       <div class="social-links">
@@ -101,19 +98,22 @@
           href="https://www.instagram.com/olussniepriv"
           target="_blank"
           class="instagram-link"
+          rel="noopener noreferrer"
         >
-          <img src="images/instagram.png" alt="Instagram" />
+          <img src="images/instagram.png" alt="Instagram" loading="lazy" />
         </a>
         <a
           href="https://github.com/olususus"
           target="_blank"
           class="github-link"
+          rel="noopener noreferrer"
         >
-          <img src="images/github.png" alt="GitHub" />
+          <img src="images/github.png" alt="GitHub" loading="lazy" />
         </a>
       </div>
     </footer>
 
-    <script src="javascript/checkout.js"></script>
+    <!-- Skrypt koszyka -->
+    <script src="javascript/checkout.js" defer></script>
   </body>
 </html>

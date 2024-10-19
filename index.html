@@ -4,31 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Sigma - Oferty</title>
+
+    <!-- Preload czcionek -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style/reset.css" />
-    <script src="javascript/script.js" defer></script>
-    <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/offer-carousel.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
+
+    <!-- Skrypt -->
+    <script src="javascript/script.js" defer></script>
   </head>
   <body>
     <header>
       <div class="logo">PROJECT SIGMA</div>
       <div class="nav">
-        <a href="index.html" class="home-icon"
-          ><img src="images/home.png" alt="homebutton"
-        /></a>
+        <a href="index.html" class="home-icon">
+          <img src="images/home.png" alt="homebutton" />
+        </a>
         <a href="products.html" class="products-link">Produkty</a>
-        <a href="cart.html" class="user-icon"
-          ><img src="images/cart.png" alt="user icon"
-        /></a>
+        <a href="cart.html" class="user-icon">
+          <img src="images/cart.png" alt="Koszyk" />
+        </a>
       </div>
     </header>
+
     <!-- Pasek informacyjny z ofertą McDonald's -->
     <div class="promo-bar">
       <p>
@@ -38,6 +47,7 @@
       </p>
       <a href="mcdonalds.html" class="promo-link">Zobacz ofertę</a>
     </div>
+
     <div id="offers-container">
       <!-- Sekcja dla ostatniej oferty z najwyższym ID, która zajmuje cały rząd -->
       <div id="latest-offer-fullrow"></div>
@@ -53,19 +63,22 @@
           href="https://www.instagram.com/olussniepriv"
           target="_blank"
           class="instagram-link"
+          rel="noopener noreferrer"
         >
-          <img src="images/instagram.png" alt="Instagram" />
+          <img src="images/instagram.png" alt="Instagram" loading="lazy" />
         </a>
         <a
           href="https://github.com/olususus"
           target="_blank"
           class="github-link"
+          rel="noopener noreferrer"
         >
-          <img src="images/github.png" alt="GitHub" />
+          <img src="images/github.png" alt="GitHub" loading="lazy" />
         </a>
       </div>
     </footer>
 
-    <script src="javascript/offer-carousel.js"></script>
+    <!-- Skrypt karuzeli ofert -->
+    <script src="javascript/offer-carousel.js" defer></script>
   </body>
 </html>

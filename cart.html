@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Koszyk</title>
-    <link rel="stylesheet" href="style/cart.css" />
-    <link rel="stylesheet" href="./style/style.css" />
+
+    <!-- Preload czcionek -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style/cart.css" />
+    <link rel="stylesheet" href="style/style.css" />
+
+    <!-- Favicon -->
     <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
   </head>
   <body>
@@ -19,48 +25,50 @@
       <div class="logo">PROJECT SIGMA</div>
       <a href="about-us.html" class="about-us">O Nas</a>
       <div class="nav">
-        <a href="index.html" class="home-icon"
-          ><img src="images/home.png" alt="homebutton"
-        /></a>
+        <a href="index.html" class="home-icon">
+          <img src="images/home.png" alt="homebutton" />
+        </a>
         <a href="products.html" class="products-link" id="products-button"
           >Produkty</a
         >
-
-        <a href="cart.html" class="user-icon"
-          ><img src="images/cart.png" alt="user icon"
-        /></a>
+        <a href="cart.html" class="user-icon">
+          <img src="images/cart.png" alt="Koszyk" />
+        </a>
       </div>
     </header>
 
     <!-- Główna zawartość strony -->
-    <div id="cart-container">
-      <h2>Twój Koszyk</h2>
-      <div id="cart-items"></div>
-    </div>
-    <div id="cart-container">
+    <main id="cart-container">
       <h2>Twój Koszyk</h2>
       <div id="cart-items"></div>
       <button class="next-btn" onclick="window.location.href='checkout.html'">
         Dalej <img src="images/arrow-right.png" alt="Strzałka" />
       </button>
-    </div>
+    </main>
 
     <!-- Skrypt koszyka -->
-    <script src="javascript/cart.js"></script>
+    <script src="javascript/cart.js" defer></script>
+
+    <footer>
+      <p>&copy; Project Sigma 2024</p>
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/olussniepriv"
+          target="_blank"
+          class="instagram-link"
+          rel="noopener noreferrer"
+        >
+          <img src="images/instagram.png" alt="Instagram" loading="lazy" />
+        </a>
+        <a
+          href="https://github.com/olususus"
+          target="_blank"
+          class="github-link"
+          rel="noopener noreferrer"
+        >
+          <img src="images/github.png" alt="GitHub" loading="lazy" />
+        </a>
+      </div>
+    </footer>
   </body>
-  <footer>
-    <p>&copy; Project Sigma 2024</p>
-    <div class="social-links">
-      <a
-        href="https://www.instagram.com/olussniepriv"
-        target="_blank"
-        class="instagram-link"
-      >
-        <img src="images/instagram.png" alt="Instagram" />
-      </a>
-      <a href="https://github.com/olususus" target="_blank" class="github-link">
-        <img src="images/github.png" alt="GitHub" />
-      </a>
-    </div>
-  </footer>
 </html>
