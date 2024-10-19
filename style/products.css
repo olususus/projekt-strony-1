@@ -62,12 +62,10 @@ header {
 }
 
 /* Kafelki z produktami */
+/* Kafelki z produktami */
 .products-container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  ); /* Użyj elastycznych kolumn */
+  grid-template-columns: repeat(3, 1fr); /* Trzy kolumny w rzędzie */
   gap: 20px;
   padding: 20px;
   justify-content: center; /* Wyśrodkowanie kolumn */

@@ -39,5 +39,21 @@
     "image": "./images/products/mcdonalds1.png",
     "url": "product.html?id=1000",
     "description": "Brakuje kalorii? Oto nasz najnowsza kolaboracja z McDonalds! Zapewni ci ona wiecej kalorii!"
+  },
+  {
+    "id": 1001,
+    "name": "KAWA - McDonalds X Project Sigma",
+    "price": "11 PLN",
+    "image": "./images/products/mcdonalds2.png",
+    "url": "product.html?id=1001",
+    "description": "Kawusia :3"
+  },
+  {
+    "id": 1002,
+    "name": "MAESTRO - McDonalds X Project Sigma",
+    "price": "16 PLN",
+    "image": "./images/products/mcdonalds3.png",
+    "url": "product.html?id=1002",
+    "description": "mmm... takiego burgerka bym sobie zjadl"
   }
 ]
