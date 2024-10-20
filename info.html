@@ -3,51 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koszyk</title>
-
-    <!-- Preload czcionek -->
+    <title>Informacje</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style/cart.css" />
-    <link rel="stylesheet" href="style/nav_footer.css" />
-
-    <!-- Favicon -->
+    <link rel="stylesheet" href="style/info.css" />
     <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style/nav_footer.css" />
   </head>
   <body>
     <header>
       <div class="logo">PROJECT SIGMA</div>
-      <a href="about-us.html" class="about-us">O Nas</a>
       <div class="nav">
-        <a href="index.html" class="home-icon">
-          <img src="images/home.png" alt="homebutton" />
-        </a>
-        <a href="products.html" class="products-link" id="products-button"
-          >Produkty</a
-        >
-        <a href="cart.html" class="user-icon">
-          <img src="images/cart.png" alt="Koszyk" />
-        </a>
+        <a href="index.html">Strona główna</a>
+        <a href="products.html">Produkty</a>
+        <a href="cart.html">Koszyk</a>
       </div>
     </header>
 
-    <!-- Główna zawartość strony -->
-    <main id="cart-container">
-      <h2>Twój Koszyk</h2>
-      <div id="cart-items"></div>
-      <button class="next-btn" onclick="window.location.href='checkout.html'">
-        Dalej <img src="images/arrow-right.png" alt="Strzałka" />
-      </button>
-    </main>
+    <div class="info-container">
+      <h1>Informacje o Zamówieniach</h1>
+      <p class="info-text">
+        <strong>Uwaga:</strong> Zamówienia nie są zapisywane, ponieważ obecnie
+        nie przechowujemy danych o transakcjach. Naszym celem jest uproszczenie
+        procesu zakupowego i skupienie się na dostarczaniu najlepszych
+        produktów.
+      </p>
+      <p class="info-text">
+        Choć nie przechowujemy danych zamówień, zespół Project Sigma ciągle
+        pracuje nad poprawą doświadczeń zakupowych. Chcemy zapewnić jak
+        najlepszą obsługę, więc wkrótce mogą pojawić się usprawnienia w tym
+        zakresie.
+      </p>
 
-    <!-- Skrypt koszyka -->
-    <script src="javascript/cart.js" defer></script>
+      <!-- Dodany przycisk -->
+      <a href="index.html" class="btn-return">Powrót do strony</a>
+    </div>
+
     <footer>
       <p>&copy; Project Sigma 2024</p>
       <div class="social-links">
