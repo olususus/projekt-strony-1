@@ -16,8 +16,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style/reset.css" />
     <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/offer-carousel.css" />
     <link rel="stylesheet" href="style/nav_footer.css" />
+    <script src="javascript/offers.js" defer></script>
 
     <!-- Favicon -->
     <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
@@ -49,13 +49,11 @@
       <a href="mcdonalds.html" class="promo-link">Zobacz ofertę</a>
     </div>
 
-    <div id="offers-container">
-      <!-- Sekcja dla ostatniej oferty z najwyższym ID, która zajmuje cały rząd -->
-      <div id="latest-offer-fullrow"></div>
+    <!-- Najnowsza oferta -->
+    <div id="latest-offer-fullrow"></div>
 
-      <!-- Kontener dla innych ofert (max 3 w rzędzie) -->
-      <div id="other-offers-container" class="offers-row"></div>
-    </div>
+    <!-- Inne oferty -->
+    <div id="other-offers-container" class="offers-row"></div>
 
     <footer>
       <p>&copy; Project Sigma 2024</p>
@@ -84,8 +82,5 @@
       <!-- Link FAQ umieszczony niżej -->
       <a href="faq.html" class="faq-link" rel="noopener noreferrer"> FAQ </a>
     </footer>
-
-    <!-- Skrypt karuzeli ofert -->
-    <script src="javascript/offer-carousel.js" defer></script>
   </body>
 </html>

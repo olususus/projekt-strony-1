@@ -27,112 +27,6 @@ body.fade-out {
   flex: 1;
   padding-bottom: 50px;
 }
-
-/* Pasek wyszukiwania */
-.search-bar {
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-}
-
-#search-input {
-  padding: 10px;
-  margin: 20px 0;
-  width: 300px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #8a5fe2;
-  background-color: #333;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-#search-input:focus {
-  outline: none;
-  border: 2px solid red;
-  width: 350px;
-  padding: 10px 15px;
-}
-
-#searchButton {
-  padding: 10px 20px;
-  background-color: #8a5fe2;
-  color: white;
-  border: 2px solid #6b6bd4;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-#searchButton:hover {
-  background-color: #5a33a6;
-  transform: scale(1.1);
-  border-color: #8a5fe2;
-}
-
-#searchButton:focus {
-  outline: none;
-  box-shadow: 0 0 5px #5a33a6;
-  border-color: #5a33a6;
-}
-
-/* Sekcja produktów */
-.latest-product {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.product-card {
-  display: inline-block;
-  background-color: #333;
-  color: white;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  width: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.product-image {
-  width: 100%;
-  height: 150px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.product-name {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.product-price {
-  color: #8a5fe2;
-  font-size: 16px;
-}
-
-.product-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background-color: #8a5fe2;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.product-link:hover {
-  background-color: #5a33a6;
-}
-
 /* Animacja powitania */
 @keyframes slideIn {
   0% {
@@ -178,4 +72,128 @@ body.fade-out {
 .promo-link:hover {
   background-color: #5a33a6;
   transform: scale(1.05);
+}
+/* Kontener na najnowszą ofertę */
+#latest-offer-fullrow {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #1a1a1a;
+  border: 2px solid #8a5fe2;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Środkowanie zawartości */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Dodaj animację */
+}
+
+#latest-offer-fullrow:hover {
+  transform: scale(1.05); /* Powiększenie całego kontenera na hover */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Głębszy cień */
+}
+
+#latest-offer-fullrow img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+#latest-offer-fullrow .offer-title {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#latest-offer-fullrow .offer-details {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+#latest-offer-fullrow .offer-price {
+  font-size: 1.5rem;
+  color: #8a5fe2;
+  margin-bottom: 20px;
+}
+
+#latest-offer-fullrow .offer-link {
+  padding: 12px 25px;
+  background-color: #8a5fe2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#latest-offer-fullrow .offer-link:hover {
+  background-color: #5a33a6;
+}
+
+/* Sekcja na inne oferty */
+#other-offers-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+/* Karty ofert */
+.offer-card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  width: calc(50% - 20px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #8a5fe2;
+}
+
+.offer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.offer-image {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.offer-title {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.offer-price {
+  font-size: 1.2rem;
+  color: #8a5fe2;
+  margin-bottom: 15px;
+}
+
+.offer-link {
+  padding: 10px 20px;
+  background-color: #8a5fe2;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.offer-link:hover {
+  background-color: #5a33a6;
 }

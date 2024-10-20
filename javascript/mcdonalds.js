@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
 
+        // Poprawna składnia dla szablonów stringów
         productCard.innerHTML = `
           <div class="product-image" style="background-image: url('${image}');"></div>
           <div class="product-name">${name}</div>

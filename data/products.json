@@ -55,5 +55,13 @@
     "image": "./images/products/mcdonalds3.png",
     "url": "product.html?id=1002",
     "description": "mmm... takiego burgerka bym sobie zjadl"
+  },
+  {
+    "id": 2000,
+    "name": "MAESTRO - McDonalds X Project Sigma",
+    "price": "16 PLN",
+    "image": "./images/products/mcdonalds3.png",
+    "url": "product.html?id=2000",
+    "description": "mmm... takiego burgerka bym sobie zjadl"
   }
 ]
