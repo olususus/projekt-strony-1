@@ -198,40 +198,74 @@ body.fade-out {
   background-color: #5a33a6;
 }
 
+/* Stylizowanie nagłówka */
 .najnowsze-opinie {
   text-align: center;
-  background: linear-gradient(to right, #000000, #ffffff);
+  font-size: 42px;
+  background: linear-gradient(to right, #7a65db, #a7a7a7);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
 }
 
-.box-opinia {
+/* Karuzela */
+.opinie-karuzela {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 40px auto;
   padding: 30px;
   background-color: #232323;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
-  text-align: center;
-  width: 90%;
-  max-width: 1200px;
-  margin: 40px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.6s ease; /* Płynna zmiana wysokości */
 }
 
+/* Animacja dla przejścia opinii */
+.box-opinia {
+  text-align: left;
+  flex: 1;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.box-opinia.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Przycisk karuzeli */
+.karuzela-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #7a65db;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.karuzela-button:hover {
+  transform: scale(1.1);
+}
+
+/* Stylizowanie opinii */
 .opinia {
   font-size: 18px;
-  margin-bottom: 20px;
-  text-align: left;
   line-height: 1.8;
+  text-align: left;
+  color: #a7a7a7;
 }
 
 .opinia-owner {
   font-size: 32px;
   color: #7a65db;
-  margin-bottom: 30px;
   font-weight: 600;
-  letter-spacing: 1px;
-  display: flex;
+  margin-bottom: 10px;
 }
