@@ -33,6 +33,14 @@
     "description": "PROMOCJA! WSZYSTKIE KOSZULKI 50% TANIEJ!"
   },
   {
+    "id": 5,
+    "name": "Torba Stylowa Project Sigma",
+    "price": "400 PLN",
+    "image": "./images/products/torba.jpg",
+    "url": "product.html?id=5",
+    "description": "fajna torba"
+  },
+  {
     "id": 1000,
     "name": "MCCRISPY - McDonalds X Project Sigma",
     "price": "15 PLN",
