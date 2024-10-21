@@ -57,11 +57,11 @@
     "description": "mmm... takiego burgerka bym sobie zjadl"
   },
   {
-    "id": 2000,
-    "name": "MAESTRO - McDonalds X Project Sigma",
-    "price": "16 PLN",
-    "image": "./images/products/mcdonalds3.png",
-    "url": "product.html?id=2000",
-    "description": "mmm... takiego burgerka bym sobie zjadl"
+    "id": 1003,
+    "name": "SUPER COMBO - McDonalds X Project Sigma",
+    "price": "18 PLN",
+    "image": "./images/products/mcdonalds4.png",
+    "url": "product.html?id=1003",
+    "description": "Ta nowość podbije Twoje serce dwukrotnie! 😎 Zobacz tylko: już za 19 zł masz dwa burgery do wyboru, a do tego średnie frytki i średni napój."
   }
 ]
