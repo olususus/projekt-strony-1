@@ -197,3 +197,41 @@ body.fade-out {
 .offer-link:hover {
   background-color: #5a33a6;
 }
+
+.najnowsze-opinie {
+  text-align: center;
+  background: linear-gradient(to right, #000000, #ffffff);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.box-opinia {
+  padding: 30px;
+  background-color: #232323;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.opinia {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.opinia-owner {
+  font-size: 32px;
+  color: #7a65db;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: flex;
+}
