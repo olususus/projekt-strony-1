@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Super Promocja na Energetyki",
     "details": "Kup nasz najnowszy napój energetyczny o smaku tropikalnym w promocyjnej cenie!",
-    "price": 5.99,
+    "price": "5.99 PLN",
     "expiryDate": "12 listopada 2024",
     "image": "images/products/produkt3.png",
     "url": "product.html?id=3"

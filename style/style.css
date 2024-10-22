@@ -1,11 +1,9 @@
-/* Resetowanie marginesów, paddingu i ustawienie box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Podstawowe style dla całej strony */
 html,
 body {
   font-family: "Montserrat", sans-serif;
@@ -22,12 +20,11 @@ body.fade-out {
   opacity: 0;
 }
 
-/* Sekcja główna */
 .main-content {
   flex: 1;
   padding-bottom: 50px;
 }
-/* Animacja powitania */
+
 @keyframes slideIn {
   0% {
     transform: translateX(-100%);
@@ -39,7 +36,6 @@ body.fade-out {
   }
 }
 
-/* Pasek informacyjny */
 .promo-bar {
   background: linear-gradient(to right, #f56f91, #ffca5a);
   padding: 15px;
@@ -268,4 +264,5 @@ body.fade-out {
   color: #7a65db;
   font-weight: 600;
   margin-bottom: 10px;
+  margin-top: 10px;
 }

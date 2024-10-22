@@ -60,7 +60,7 @@ h4 {
 .delivery-method input[type="radio"]:checked + label {
   background-color: #8a5fe2;
   border-color: #8a5fe2;
-  color: white;
+  color: #232323;
 }
 
 .delivery-method input[type="radio"]:checked + label:hover {
@@ -90,6 +90,7 @@ h4 {
   margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: #7a65db;
 }
 
 /* Przycisk 'Złóż zamówienie' */

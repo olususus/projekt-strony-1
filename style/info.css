@@ -6,38 +6,6 @@ body {
   background-color: #fafafa;
   color: #333;
 }
-
-header {
-  background-color: #1a1a1a;
-  padding: 20px 0;
-  text-align: center;
-  color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header .logo {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-}
-
-header .nav {
-  margin-top: 10px;
-}
-
-header .nav a {
-  margin: 0 20px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-header .nav a:hover {
-  color: #8a5fe2;
-}
-
 footer {
   background-color: #1a1a1a;
   color: #fff;
