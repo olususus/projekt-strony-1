@@ -1,19 +1,24 @@
 .training-box {
   background-color: #232323;
   color: #ffffff;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  margin: 10px auto; /* Wyśrodkowanie boxów */
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
+  max-width: 600px; /* Ustalona maksymalna szerokość dla lepszego wyśrodkowania */
+  overflow: hidden;
 }
 
 .training-box:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 h1 {
   text-align: center;
-  margin: 20px 0;
+  margin: 15px 0;
   color: #8a5fe2;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
