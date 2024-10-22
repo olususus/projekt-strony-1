@@ -43,7 +43,8 @@ footer .social-links img {
   letter-spacing: 1px;
 }
 
-.info-text {
+.info-text,
+.disclaimer {
   font-size: 18px;
   color: #555;
   margin-bottom: 20px;

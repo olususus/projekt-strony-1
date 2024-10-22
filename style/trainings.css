@@ -22,3 +22,12 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+.parallax {
+  /* Ustawienia dla tła parallax */
+  background-image: url("../images/silowniabg.jpg");
+  height: 500px; /* Wysokość sekcji parallax */
+  background-attachment: fixed; /* Kluczowy element dla efektu parallax */
+  background-position: center; /* Wyśrodkowanie obrazu */
+  background-repeat: no-repeat; /* Nie powtarzaj tła */
+  background-size: cover; /* Pokryj całą sekcję */
+}
