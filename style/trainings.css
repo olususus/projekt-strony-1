@@ -2,11 +2,11 @@
   background-color: #232323;
   color: #ffffff;
   padding: 15px;
-  margin: 10px auto; /* Wyśrodkowanie boxów */
+  margin: 10px auto;
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
-  max-width: 600px; /* Ustalona maksymalna szerokość dla lepszego wyśrodkowania */
+  max-width: 600px;
   overflow: hidden;
 }
 
@@ -23,11 +23,10 @@ h1 {
   letter-spacing: 1px;
 }
 .parallax {
-  /* Ustawienia dla tła parallax */
   background-image: url("../images/silowniabg.jpg");
-  height: 500px; /* Wysokość sekcji parallax */
-  background-attachment: fixed; /* Kluczowy element dla efektu parallax */
-  background-position: center; /* Wyśrodkowanie obrazu */
-  background-repeat: no-repeat; /* Nie powtarzaj tła */
-  background-size: cover; /* Pokryj całą sekcję */
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -1,9 +1,7 @@
-/* Wspólna klasa dla tekstu */
 .text-white {
   color: white;
 }
 
-/* Kontener na potwierdzenie zamówienia */
 #confirmation-container {
   padding: 20px;
   max-width: 800px;
@@ -22,7 +20,6 @@
   font-size: 16px;
 }
 
-/* Szczegóły zamówienia */
 #order-details {
   margin-bottom: 20px;
 }
@@ -32,27 +29,25 @@
   margin: 8px 0;
 }
 
-/* Produkty w zamówieniu */
 #order-items {
   margin-bottom: 20px;
 }
 
-/* Produkty w zamówieniu */
 #order-items .order-item {
   background-color: #3a3a3a;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex; /* Ustawienie flexboxa */
-  align-items: center; /* Centruj elementy w pionie */
+  display: flex;
+  align-items: center;
 }
 
 #order-items .order-item img {
-  max-width: 100px; /* Ograniczenie szerokości obrazka */
-  max-height: 100px; /* Ograniczenie wysokości obrazka */
-  object-fit: contain; /* Zapewnia, że obrazek nie wyjdzie poza box */
-  margin-right: 15px; /* Odstęp między obrazkiem a tekstem */
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+  margin-right: 15px;
 }
 
 #order-items .order-item p {
@@ -60,14 +55,12 @@
   color: white;
 }
 
-/* Łączna cena */
 #order-total-price {
   font-size: 18px;
   font-weight: bold;
   color: #8a5fe2;
 }
 
-/* Przycisk powrotu */
 button {
   background-color: #8a5fe2;
   color: white;
@@ -82,12 +75,10 @@ button:hover {
   background-color: #7c4bcd;
 }
 
-/* Stylowanie nagłówków sekcji zamówienia */
 #order-details h3 {
   color: #8a5fe2;
 }
 
-/* Stylowanie szczegółów zamówienia i produktów */
 #order-details p,
 #order-items p,
 .order-item p {

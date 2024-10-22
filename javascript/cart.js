@@ -1,20 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Pobranie koszyka z localStorage
   const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Zapisanie koszyka do localStorage
   const saveCart = (cart) => localStorage.setItem("cart", JSON.stringify(cart));
 
-  // Usuwanie produktu z koszyka
   const removeFromCart = (index) => {
     const cart = getCart();
-    cart.splice(index, 1); // Usuwa produkt na danym indeksie
+    cart.splice(index, 1);
     saveCart(cart);
     displayCartItems();
     updateCartCount();
   };
 
-  // Wyświetlanie produktów w koszyku
   const displayCartItems = () => {
     const cart = getCart();
     const cartItemsContainer = document.getElementById("cart-items");
@@ -51,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Aktualizacja liczby produktów w koszyku
   const updateCartCount = () => {
     const cart = getCart();
     const cartLink = document.querySelector(".cart-link img");
@@ -62,8 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartCount = cart.length;
     cartLink.setAttribute("alt", `Koszyk (${cartCount})`);
   };
-
-  // Wyświetlenie zawartości koszyka oraz aktualizacja liczby produktów
   if (document.getElementById("cart-items")) displayCartItems();
   updateCartCount();
 });

@@ -69,7 +69,7 @@ body.fade-out {
   background-color: #5a33a6;
   transform: scale(1.05);
 }
-/* Kontener na najnowszą ofertę */
+
 #latest-offer-fullrow {
   width: 90%;
   max-width: 1200px;
@@ -81,14 +81,14 @@ body.fade-out {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Środkowanie zawartości */
+  align-items: center;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Dodaj animację */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #latest-offer-fullrow:hover {
-  transform: scale(1.05); /* Powiększenie całego kontenera na hover */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Głębszy cień */
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 #latest-offer-fullrow img {
@@ -132,7 +132,6 @@ body.fade-out {
   background-color: #5a33a6;
 }
 
-/* Sekcja na inne oferty */
 #other-offers-container {
   width: 90%;
   max-width: 1200px;
@@ -143,7 +142,6 @@ body.fade-out {
   gap: 20px;
 }
 
-/* Karty ofert */
 .offer-card {
   background-color: #1a1a1a;
   border-radius: 15px;
@@ -194,7 +192,6 @@ body.fade-out {
   background-color: #5a33a6;
 }
 
-/* Stylizowanie nagłówka */
 .najnowsze-opinie {
   text-align: center;
   font-size: 42px;
@@ -206,7 +203,6 @@ body.fade-out {
   letter-spacing: 2px;
 }
 
-/* Karuzela */
 .opinie-karuzela {
   display: flex;
   align-items: center;
@@ -219,10 +215,9 @@ body.fade-out {
   border-radius: 12px;
   position: relative;
   overflow: hidden;
-  transition: height 0.6s ease; /* Płynna zmiana wysokości */
+  transition: height 0.6s ease;
 }
 
-/* Animacja dla przejścia opinii */
 .box-opinia {
   text-align: left;
   flex: 1;
@@ -237,7 +232,6 @@ body.fade-out {
   transform: translateX(0);
 }
 
-/* Przycisk karuzeli */
 .karuzela-button {
   background: none;
   border: none;
@@ -251,7 +245,6 @@ body.fade-out {
   transform: scale(1.1);
 }
 
-/* Stylizowanie opinii */
 .opinia {
   font-size: 18px;
   line-height: 1.8;
@@ -299,7 +292,7 @@ body.fade-out {
 .countdown-value {
   font-size: 48px;
   font-weight: bold;
-  color: #8a5fe2; /* Możesz dostosować kolor */
+  color: #8a5fe2;
   display: block;
   animation: countUp 1s ease-in-out forwards;
 }
@@ -330,7 +323,6 @@ body.fade-out {
   }
 }
 
-/* Efekt na hover */
 .countdown-item:hover {
   transform: scale(1.1);
 }
@@ -339,24 +331,24 @@ body.fade-out {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #8a5fe2; /* Użyj swojego koloru */
+  background-color: #8a5fe2;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
   font-size: 16px;
-  display: none; /* Na początku ukryty */
-  opacity: 0; /* Początkowa przezroczystość */
-  transition: opacity 0.5s ease; /* Animacja dla znikania */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .back-to-top.visible {
-  display: block; /* Wyświetl przycisk */
-  opacity: 1; /* Ustaw przezroczystość na 1 */
+  display: block;
+  opacity: 1;
 }
 
 .back-to-top:hover {
-  background-color: #7a65db; /* Jaśniejszy kolor po najechaniu */
-  transform: scale(1.1); /* Lekki efekt powiększenia */
+  background-color: #7a65db;
+  transform: scale(1.1);
 }

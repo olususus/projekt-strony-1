@@ -1,37 +1,3 @@
-/* Ogólne ustawienia dla całej strony */
-body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #1a1a1a;
-  color: #dcdcdc; /* Jasnoszary dla tekstu */
-  margin: 0;
-  padding: 0;
-}
-
-/* Nagłówek */
-header {
-  background-color: #8a5fe2;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-header .nav {
-  margin-top: 10px;
-}
-
-header .nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-/* Stylowanie kontenera FAQ */
 #faq-container {
   padding: 20px;
   max-width: 800px;
@@ -41,7 +7,6 @@ header .nav a {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Nagłówek FAQ */
 #faq-container h2 {
   color: #6b6bd4;
   font-size: 32px;
@@ -49,13 +14,12 @@ header .nav a {
   margin-bottom: 20px;
 }
 
-/* Stylowanie pytań */
 .faq-item {
   margin-bottom: 20px;
 }
 
 .faq-item h3 {
-  color: #6b6bd4; /* Fioletowy nagłówek pytania */
+  color: #6b6bd4;
   font-size: 22px;
   margin-bottom: 10px;
 }
@@ -65,7 +29,6 @@ header .nav a {
   margin-bottom: 10px;
 }
 
-/* Przycisk powrotu */
 .back-button {
   background-color: #6b6bd4;
   color: white;
@@ -82,7 +45,6 @@ header .nav a {
   background-color: #5a59bb;
 }
 
-/* Stopka */
 footer {
   background-color: #1a1a1a;
   color: white;

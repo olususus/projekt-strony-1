@@ -22,5 +22,13 @@
     "location": "Sala C",
     "duration": "45 minut",
     "description": "Trening cardio z różnymi formami intensywnego wysiłku."
+  },
+  {
+    "id": 4,
+    "name": "test",
+    "date": "2024-11-05T19:00:00Z",
+    "location": "Sala A",
+    "duration": "45 minut",
+    "description": "test"
   }
 ]

@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const standardItems = document.getElementById("standard-items");
       const specialItems = document.getElementById("special-items");
 
-      // Podział produktów na standardowe i specjalne
       products.forEach((product) => {
         const productElement = createProductElement(product);
         const targetContainer = product.id > 999 ? specialItems : standardItems;
@@ -15,12 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.log("Błąd w ładowaniu produktów:", error));
 });
 
-// Funkcja do tworzenia elementu produktu
 function createProductElement({ image, name, price, url }) {
   const productContainer = document.createElement("div");
   productContainer.classList.add("product-item");
 
-  // Tworzenie elementów produktu
   productContainer.innerHTML = `
     <img src="${image}" alt="${name}" />
     <h4>${name}</h4>

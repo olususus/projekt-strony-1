@@ -1,4 +1,3 @@
-/* Kafelki produktów */
 .products-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,7 +52,6 @@
   margin-top: 5px;
 }
 
-/* Animacja tekstu */
 .special-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -83,7 +81,6 @@
   }
 }
 
-/* Animacja specjalnych produktów */
 #special-products-container .product-card {
   position: relative;
   background-color: #444;

@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout</title>
-
-    <!-- Preload czcionek i zasobów -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,12 +11,10 @@
       rel="stylesheet"
     />
 
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="style/checkout.css" />
     <link rel="stylesheet" href="style/nav_footer.css" />
     <link rel="stylesheet" href="style/reset.css" />
 
-    <!-- Favicon -->
     <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
   </head>
   <body>
@@ -32,21 +28,16 @@
         <a href="cart.html" class="user-icon">
           <img src="images/cart.png" alt="Koszyk" />
         </a>
-        <a href="trainings.html" class="trainings-link button">Treningi</a>
-        <!-- Dodany guzik -->
       </div>
     </header>
-    <!-- Główna zawartość strony -->
     <main id="checkout-container">
       <h2>Twoje zamówienie</h2>
       <div id="checkout-items"></div>
 
-      <!-- Sekcja wyświetlająca łączną cenę -->
       <section id="total-price-section">
         <h3>Łączna cena: <span id="total-price">0 PLN</span></h3>
       </section>
 
-      <!-- Sposób dostawy i dane osobowe -->
       <section id="delivery-details">
         <h3>Wybierz sposób dostawy</h3>
         <div class="delivery-method">
@@ -66,7 +57,6 @@
           <label for="dpd">DPD</label>
         </div>
 
-        <!-- Adres dostawy -->
         <div class="address-section">
           <h4>Adres dostawy</h4>
           <input
@@ -77,7 +67,6 @@
           />
         </div>
 
-        <!-- Dane osobowe -->
         <div class="personal-details">
           <h4>Dane osobowe</h4>
           <input type="text" id="name" placeholder="Imię i nazwisko" required />
@@ -113,11 +102,9 @@
         Informacje
       </a>
 
-      <!-- Link FAQ umieszczony niżej -->
       <a href="faq.html" class="faq-link" rel="noopener noreferrer"> FAQ </a>
     </footer>
 
-    <!-- Skrypt koszyka -->
     <script src="javascript/checkout.js" defer></script>
   </body>
 </html>

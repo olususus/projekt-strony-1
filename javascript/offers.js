@@ -2,13 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("data/offers.json")
     .then((response) => response.json())
     .then((data) => {
-      // Znajdź ofertę z największym id
       const latestOffer = data.reduce(
         (max, offer) => (offer.id > max.id ? offer : max),
         data[0]
       );
 
-      // Szablon HTML dla najnowszej oferty
       const latestOfferHTML = `
         <img src="${latestOffer.image}" alt="${latestOffer.title}" />
         <h2 class="offer-title">${latestOffer.title}</h2>
@@ -17,13 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="${latestOffer.url}" class="offer-link">Zobacz ofertę</a>
       `;
 
-      // Dodajemy HTML do kontenera
       document.getElementById("latest-offer-fullrow").innerHTML =
         latestOfferHTML;
 
-      // Generowanie HTML dla innych ofert (po 2 w rzędzie)
       const otherOffersHTML = data
-        .filter((offer) => offer.id !== latestOffer.id) // Usuwamy najnowszą ofertę z listy
+        .filter((offer) => offer.id !== latestOffer.id)
         .map(
           (offer) => `
           <div class="offer-card">
@@ -36,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         )
         .join("");
 
-      // Dodajemy oferty do kontenera
       document.getElementById("other-offers-container").innerHTML =
         otherOffersHTML;
     })

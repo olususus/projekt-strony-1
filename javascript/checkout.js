@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Funkcja do pobrania koszyka z localStorage
   const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Funkcja do wyświetlania produktów w koszyku
   const displayCheckoutItems = () => {
     const cart = getCart();
     const checkoutItemsContainer = document.getElementById("checkout-items");
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Funkcja do złożenia zamówienia
   const submitOrder = () => {
     const cart = getCart();
     const name = document.getElementById("name").value;
@@ -61,19 +58,15 @@ document.addEventListener("DOMContentLoaded", () => {
       totalPrice: calculateTotalPrice(cart),
     };
 
-    // Zapisz dane zamówienia w localStorage
     localStorage.setItem("order", JSON.stringify(order));
 
-    // Wyświetl komunikat sukcesu
     alert(
       "Zamówienie zostało zapisane w localStorage. Możesz je zobaczyć w przeglądarce."
     );
 
-    // Można dodać przekierowanie po zakończeniu procesu zamówienia, np.:
-    window.location.href = "order-confirmation.html"; // lub inna strona
+    window.location.href = "order-confirmation.html";
   };
 
-  // Funkcja do obliczenia łącznej ceny
   const calculateTotalPrice = (cart) =>
     cart.reduce((sum, product) => {
       return (
@@ -81,10 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }, 0);
 
-  // Wyświetlanie produktów po załadowaniu strony
   displayCheckoutItems();
 
-  // Obsługuje kliknięcie przycisku "Złóż zamówienie"
   const submitOrderButton = document.getElementById("place-order");
   submitOrderButton?.addEventListener("click", submitOrder);
 });

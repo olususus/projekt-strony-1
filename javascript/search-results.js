@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get("query") || ""; // Jeśli brak query, użyj pustego ciągu
+  const query = urlParams.get("query") || "";
   const searchQueryElement = document.getElementById("search-query");
 
-  // Jeśli element 'search-query' istnieje, ustawiamy tekst zapytania
   if (searchQueryElement) {
     searchQueryElement.textContent = query;
   }
 
-  // Pobieramy dane o produktach z pliku JSON
   fetch("data/products.json")
     .then((response) => {
       if (!response.ok) {
@@ -17,12 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then((products) => {
-      // Filtrujemy produkty na podstawie zapytania
       const matchingProducts = products
         .filter((product) =>
           product.name.toLowerCase().includes(query.toLowerCase())
         )
-        .slice(0, 5); // Wyświetlamy maksymalnie 5 wyników
+        .slice(0, 5);
 
       const resultsList = document.getElementById("results-list");
 

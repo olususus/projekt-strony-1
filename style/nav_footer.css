@@ -1,11 +1,9 @@
-/* Resetowanie marginesów, paddingu i ustawienie box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Podstawowe style dla całej strony */
 html,
 body {
   font-family: "Montserrat", sans-serif;
@@ -19,12 +17,12 @@ body {
 }
 
 .nav a {
-  text-decoration: none; /* Usunięcie podkreślenia */
-  color: white; /* Kolor tekstu */
-  margin: 0 15px; /* Odstępy między linkami */
-  font-weight: 600; /* Pogrubienie tekstu */
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  font-weight: 600;
 }
-/* Nagłówek */
+
 header {
   background-color: #8a5fe2;
   padding: 15px;
@@ -70,13 +68,12 @@ header {
   color: white;
 }
 
-/* Stylizacja dla linku FAQ z dodatkowym odstępem */
 footer .faq-link {
   color: #6b6bd4;
   font-size: 16px;
   text-decoration: none;
-  margin-top: 20px; /* Większy margines od góry, aby link był niżej */
-  display: inline-block; /* Aby margines działał poprawnie */
+  margin-top: 20px;
+  display: inline-block;
   padding: 5px 10px;
   border: 1px solid #6b6bd4;
   border-radius: 5px;
@@ -87,7 +84,6 @@ footer .faq-link:hover {
   color: white;
 }
 
-/* Stopka */
 footer {
   background-color: #333;
   color: white;

@@ -1,26 +1,3 @@
-/* Podstawowe style strony */
-body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #f8f8f8; /* Jasne tło */
-  color: #333; /* Ciemniejszy tekst dla kontrastu */
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #d01c1f; /* Czerwony kolor McDonald's */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header .logo {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
 nav a {
   color: white;
   text-decoration: none;
@@ -32,9 +9,8 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Pasek informacyjny o kolaboracji */
 .collaboration-banner {
-  background-color: #ffb800; /* Kolor żółty McDonald's */
+  background-color: #ffb800;
   color: #1a1a1a;
   text-align: center;
   padding: 15px;
@@ -47,18 +23,16 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* Napis "Produkty Kolaboracyjne" */
 .collaboration-title {
-  font-size: 2.5rem; /* Duża czcionka */
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #d01c1f; /* Czerwony kolor McDonald's */
+  color: #d01c1f;
   text-align: center;
   margin: 40px 0 20px;
   letter-spacing: 2px;
-  animation: fadeIn 1s ease-out; /* Animacja pojawiania się */
+  animation: fadeIn 1s ease-out;
 }
 
-/* Animacja pojawiania się napisu */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -70,7 +44,6 @@ nav a:hover {
   }
 }
 
-/* Lista produktów */
 .product-list {
   display: flex;
   flex-wrap: wrap;
@@ -118,7 +91,7 @@ nav a:hover {
 }
 
 .product-price {
-  color: #ffb800; /* Żółty kolor */
+  color: #ffb800;
   font-size: 1.3em;
   margin-bottom: 15px;
 }
@@ -139,7 +112,6 @@ nav a:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsywność */
 @media (max-width: 768px) {
   .product-card {
     width: calc(50% - 20px);
