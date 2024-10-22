@@ -3,23 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koszyk</title>
-
-    <!-- Preload czcionek -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Project Sigma - Treningi</title>
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/nav_footer.css" />
+    <link rel="stylesheet" href="style/trainings.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style/cart.css" />
-    <link rel="stylesheet" href="style/nav_footer.css" />
-    <link rel="stylesheet" href="style/reset.css" />
-
-    <!-- Favicon -->
     <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
+    <script src="javascript/trainings.js" defer></script>
   </head>
   <body>
     <header>
@@ -37,24 +30,17 @@
       </div>
     </header>
 
-    <!-- Główna zawartość strony -->
-    <main id="cart-container">
-      <h2>Twój Koszyk</h2>
-      <div id="cart-items"></div>
-      <button class="next-btn" onclick="window.location.href='checkout.html'">
-        Dalej <img src="images/arrow-right.png" alt="Strzałka" />
-      </button>
+    <main>
+      <h1>Nadchodzące Treningi</h1>
+      <div id="trainings-container"></div>
     </main>
 
-    <!-- Skrypt koszyka -->
-    <script src="javascript/cart.js" defer></script>
     <footer>
       <p>&copy; Project Sigma 2024</p>
       <div class="social-links">
         <a
           href="https://www.instagram.com/olussniepriv"
           target="_blank"
-          class="instagram-link"
           rel="noopener noreferrer"
         >
           <img src="images/instagram.png" alt="Instagram" loading="lazy" />
@@ -62,18 +48,15 @@
         <a
           href="https://github.com/olususus"
           target="_blank"
-          class="github-link"
           rel="noopener noreferrer"
         >
           <img src="images/github.png" alt="GitHub" loading="lazy" />
         </a>
       </div>
-      <a href="info.html" class="info-link" rel="noopener noreferrer">
-        Informacje
-      </a>
-
-      <!-- Link FAQ umieszczony niżej -->
-      <a href="faq.html" class="faq-link" rel="noopener noreferrer"> FAQ </a>
+      <a href="info.html" class="info-link" rel="noopener noreferrer"
+        >Informacje</a
+      >
+      <a href="faq.html" class="faq-link" rel="noopener noreferrer">FAQ</a>
     </footer>
   </body>
 </html>

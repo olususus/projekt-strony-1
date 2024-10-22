@@ -266,3 +266,97 @@ body.fade-out {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
+.countdown-container {
+  text-align: center;
+  padding: 40px;
+  background-color: #232323;
+  color: #ffffff;
+  margin: 40px 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.countdown-container h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.countdown-item {
+  text-align: center;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.countdown-value {
+  font-size: 48px;
+  font-weight: bold;
+  color: #8a5fe2; /* Możesz dostosować kolor */
+  display: block;
+  animation: countUp 1s ease-in-out forwards;
+}
+
+.countdown-label {
+  font-size: 18px;
+  color: #a7a7a7;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes countUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Efekt na hover */
+.countdown-item:hover {
+  transform: scale(1.1);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8a5fe2; /* Użyj swojego koloru */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  display: none; /* Na początku ukryty */
+  opacity: 0; /* Początkowa przezroczystość */
+  transition: opacity 0.5s ease; /* Animacja dla znikania */
+}
+
+.back-to-top.visible {
+  display: block; /* Wyświetl przycisk */
+  opacity: 1; /* Ustaw przezroczystość na 1 */
+}
+
+.back-to-top:hover {
+  background-color: #7a65db; /* Jaśniejszy kolor po najechaniu */
+  transform: scale(1.1); /* Lekki efekt powiększenia */
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Trening Siłowy",
+    "date": "2024-10-30T18:00:00Z",
+    "location": "Sala A",
+    "duration": "90 minut",
+    "description": "Intensywny trening siłowy z użyciem ciężarów."
+  },
+  {
+    "id": 2,
+    "name": "Yoga",
+    "date": "2024-11-02T17:00:00Z",
+    "location": "Sala B",
+    "duration": "60 minut",
+    "description": "Relaksująca sesja jogi dla każdego poziomu zaawansowania."
+  },
+  {
+    "id": 3,
+    "name": "Cardio Blast",
+    "date": "2024-11-05T19:00:00Z",
+    "location": "Sala C",
+    "duration": "45 minut",
+    "description": "Trening cardio z różnymi formami intensywnego wysiłku."
+  }
+]

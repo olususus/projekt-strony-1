@@ -26,6 +26,10 @@
     <!-- Skrypt -->
     <script src="javascript/script.js" defer></script>
     <script src="javascript/opinie.js" defer></script>
+    <script src="javascript/scroll.js" defer></script>
+    <script src="javascript/scroll.js" defer></script>
+
+    <script src="javascript/countdown.js" defer></script>
   </head>
   <body>
     <header>
@@ -38,6 +42,8 @@
         <a href="cart.html" class="user-icon">
           <img src="images/cart.png" alt="Koszyk" />
         </a>
+        <a href="trainings.html" class="trainings-link button">Treningi</a>
+        <!-- Dodany guzik -->
       </div>
     </header>
 
@@ -49,6 +55,28 @@
         więcej!
       </p>
       <a href="mcdonalds.html" class="promo-link">Zobacz ofertę</a>
+    </div>
+    <!-- Countdown -->
+    <div id="countdown" class="countdown-container">
+      <h2>Otwarcie nowej siłowni za:</h2>
+      <div id="countdown-timer">
+        <div class="countdown-item">
+          <span id="days" class="countdown-value">0</span>
+          <div class="countdown-label">dni</div>
+        </div>
+        <div class="countdown-item">
+          <span id="hours" class="countdown-value">0</span>
+          <div class="countdown-label">godzin</div>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes" class="countdown-value">0</span>
+          <div class="countdown-label">minut</div>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds" class="countdown-value">0</span>
+          <div class="countdown-label">sekund</div>
+        </div>
+      </div>
     </div>
 
     <!-- Najnowsza oferta -->
@@ -94,5 +122,6 @@
       <!-- Link FAQ umieszczony niżej -->
       <a href="faq.html" class="faq-link" rel="noopener noreferrer"> FAQ </a>
     </footer>
+    <button id="back-to-top" class="back-to-top">Wróć na górę</button>
   </body>
 </html>
