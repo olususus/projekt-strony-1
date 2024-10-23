@@ -1,28 +1,18 @@
-// Funkcja dodająca klasę 'loaded' po załadowaniu strony
 window.addEventListener("load", function () {
-  // Dodajemy klasę 'loaded' do body, aby uruchomić animację
   document.body.classList.add("loaded");
-
-  // Dodajemy klasę 'loaded' do tytułu specjalnej kategorii
   document.querySelector(".special-title").classList.add("loaded");
 });
 
-// Funkcja do płynnego przejścia do strony "products.html"
 document
   .getElementById("products-button")
   .addEventListener("click", function (event) {
-    event.preventDefault(); // Zapobiegamy domyślnemu działaniu linku
-
-    // Dodajemy animację fade-out do body przed przejściem
+    event.preventDefault();
     document.body.classList.add("fade-out");
-
-    // Po zakończeniu animacji przejście do strony
     setTimeout(function () {
-      window.location.href = "products.html"; // Przekierowanie na products.html
-    }, 500); // Czas, po którym następuje przekierowanie (czas trwania animacji)
+      window.location.href = "products.html";
+    }, 500);
   });
 
-// Funkcja wyszukiwania produktu
 function searchProduct() {
   const searchInput = document
     .getElementById("search-input")
@@ -32,7 +22,6 @@ function searchProduct() {
   )}`;
 }
 
-// Funkcja do wczytania danych produktów z JSON i generowania kart produktów
 fetch("data/products.json")
   .then((response) => response.json())
   .then((products) => {
@@ -65,7 +54,6 @@ fetch("data/products.json")
       productLink.appendChild(productPrice);
       productCard.appendChild(productLink);
 
-      // Przypisujemy produkty o ID > 999 do specjalnej kategorii
       if (product.id > 999) {
         specialProductsContainer.appendChild(productCard);
       } else {
