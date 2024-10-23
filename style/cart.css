@@ -85,7 +85,6 @@
 #checkout:hover {
   background-color: #5a33a6;
 }
-
 .next-btn {
   background-color: #8a5fe2;
   color: white;
@@ -96,10 +95,12 @@
   border-radius: 5px;
   cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   transition: background-color 0.3s ease;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .next-btn img {
