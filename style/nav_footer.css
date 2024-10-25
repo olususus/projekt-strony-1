@@ -41,24 +41,18 @@ header {
   align-items: center;
 }
 
-.products-link,
-.about-us,
-.trainings-link,
-.gym-button,
-.shop-link,
-.user-icon {
+.nav > img {
+  height: 10px;
+}
+
+.icon-nav {
   padding: 5px 10px;
   background-color: #6f42c1;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
-.products-link:hover,
-.about-us:hover,
-.trainings-link:hover,
-.gym-button:hover,
-.shop-link:hover,
-.user-icon:hover {
+.icon-nav:hover {
   background-color: #5a33a6;
 }
 
