@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("address").innerText = address || "Brak adresu";
     document.getElementById("name").innerText = name || "Brak nazwy";
     document.getElementById("email").innerText = email || "Brak adresu email";
+    document.getElementById("phone").innerText =
+      phone || "Brak numeru telefonu";
   }
 
   function clearOrderData() {

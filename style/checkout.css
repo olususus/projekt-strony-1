@@ -28,11 +28,18 @@ h4 {
   display: none;
 }
 
+.deliver-text {
+  text-align: center;
+  color: #6f47c2;
+  font-size: 35px;
+}
+
 .delivery-method label {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   padding: 15px 30px;
   background-color: #f0f0f0;
+  color: #6f47c2;
   border: 2px solid #ccc;
   border-radius: 30px;
   cursor: pointer;
