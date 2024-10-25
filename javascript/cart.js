@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${product.name}</h3>
           <p>${product.price}</p>
         </div>
-        <button class="remove-item" data-index="${index}">Usuń</button>
+        <button class="remove-item" data-index="${index}"><img src="images/removefromcart.png" alt="Usuń"/></button>
       `;
 
       cartItem

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Trening siłowy",
+    "goal": "siła",
+    "intensity": "wysoka",
+    "duration": 30,
+    "description": "Intensywny trening siłowy na całe ciało."
+  },
+  {
+    "name": "Trening redukcyjny",
+    "goal": "redukcja",
+    "intensity": "średnia",
+    "duration": 20,
+    "description": "Trening ukierunkowany na spalanie tłuszczu i redukcję masy ciała."
+  },
+  {
+    "name": "Trening na masę",
+    "goal": "budowanie masy",
+    "intensity": "wysoka",
+    "duration": 45,
+    "description": "Trening nastawiony na budowanie masy mięśniowej."
+  },
+  {
+    "name": "Cardio",
+    "goal": "redukcja",
+    "intensity": "niska",
+    "duration": 30,
+    "description": "Łagodne cardio, idealne na redukcję tkanki tłuszczowej."
+  },
+  {
+    "name": "Trening obwodowy",
+    "goal": "budowanie masy",
+    "intensity": "średnia",
+    "duration": 40,
+    "description": "Obwodowy trening angażujący wszystkie grupy mięśniowe."
+  },
+  {
+    "name": "HIIT",
+    "goal": "redukcja",
+    "intensity": "wysoka",
+    "duration": 20,
+    "description": "Intensywny trening interwałowy, skoncentrowany na redukcji masy ciała."
+  },
+  {
+    "name": "Joga",
+    "goal": "siła",
+    "intensity": "niska",
+    "duration": 60,
+    "description": "Trening jogi poprawiający siłę i elastyczność."
+  },
+  {
+    "name": "Pływanie",
+    "goal": "budowanie masy",
+    "intensity": "średnia",
+    "duration": 45,
+    "description": "Pływanie, które wspiera rozwój siły i wytrzymałości."
+  }
+]

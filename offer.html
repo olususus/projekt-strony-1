@@ -3,16 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produkty</title>
-    <link rel="stylesheet" href="style/products.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="images/ikona.ico" type="image/x-icon" />
+    <title>Spersonalizowany Trening - Project Sigma</title>
+    <link rel="stylesheet" href="style/offers.css" />
     <link rel="stylesheet" href="style/nav_footer.css" />
-    <link rel="stylesheet" href="style/reset.css" />
-    <script src="javascript/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,16 +23,50 @@
         <a href="trainings.html" class="icon-nav">
           <img src="images/trainings.svg" alt="treningi" />
         </a>
+        <a href="offer.html" class="icon-nav">
+          <img src="images/help.svg" alt="pomoc" />
+        </a>
       </div>
     </header>
-    <button id="products-button"></button>
+    <section id="training-form">
+      <form>
+        <label for="goal">Cel treningowy:</label>
+        <select id="goal" required>
+          <option value="strength">Siła</option>
+          <option value="weight_loss">Redukcja</option>
+          <option value="muscle_gain">Budowanie masy</option>
+        </select>
 
-    <div class="products-container" id="products-container"></div>
+        <label for="intensity">Intensywność:</label>
+        <select id="intensity" required>
+          <option value="low">Niska</option>
+          <option value="medium">Średnia</option>
+          <option value="high">Wysoka</option>
+        </select>
 
-    <h2 class="special-title">
-      <img src="images/mcdonalds.png" alt="McDonalds" />
-    </h2>
-    <div class="products-container" id="special-products-container"></div>
+        <label for="duration">Czas trwania treningu:</label>
+        <input
+          type="number"
+          id="duration"
+          min="10"
+          max="120"
+          placeholder="w minutach"
+          required
+        />
+
+        <button type="button" onclick="generatePlan()">Zatwierdź</button>
+        <button type="button" id="show-all-trainings-btn">
+          Pokaż wszystkie treningi
+        </button>
+      </form>
+    </section>
+
+    <section id="training-plan">
+      <h2>Rekomendowany plan treningowy:</h2>
+      <ul id="plan-list"></ul>
+    </section>
+
+    <script src="javascript/offer.js"></script>
   </body>
   <footer>
     <p>&copy; Project Sigma 2024</p>
